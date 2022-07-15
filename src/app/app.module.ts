@@ -6,12 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IngerdientListComponent } from './Components/Ingredient/ingerdient-list/ingerdient-list.component';
 import { IngerdientCardsComponent } from './Components/Ingredient/ingerdient-cards/ingerdient-cards.component';
+import { SignUpComponent } from './Components/Account/sign-up/sign-up.component';
+import { LogInComponent } from './Components/Account/log-in/log-in.component';
+import { LogOutComponent } from './Components/Account/log-out/log-out.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IngerdientListComponent,
     IngerdientCardsComponent,
+    SignUpComponent,
+    LogInComponent,
+    LogOutComponent,
     
   ],
   imports: [
