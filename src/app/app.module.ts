@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,9 +26,11 @@ import { RecipeListComponent } from './Components/Recipe/recipe-list/recipe-list
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+    // HttpClientMoule
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

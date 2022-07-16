@@ -10,6 +10,7 @@ export class IngerdientListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
