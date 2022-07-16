@@ -9,6 +9,8 @@ import { IngerdientCardsComponent } from './Components/Ingredient/ingerdient-car
 import { SignUpComponent } from './Components/Account/sign-up/sign-up.component';
 import { LogInComponent } from './Components/Account/log-in/log-in.component';
 import { LogOutComponent } from './Components/Account/log-out/log-out.component';
+import { RecipeCardComponent } from './Components/Recipe/recipe-card/recipe-card.component';
+import { RecipeListComponent } from './Components/Recipe/recipe-list/recipe-list.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { LogOutComponent } from './Components/Account/log-out/log-out.component'
     SignUpComponent,
     LogInComponent,
     LogOutComponent,
+    RecipeCardComponent,
+    RecipeListComponent,
     
   ],
   imports: [
