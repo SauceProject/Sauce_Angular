@@ -16,7 +16,7 @@ import { IngerdientCardsComponent } from './Components/Ingredient/ingerdient-car
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+    // HttpClientMoule
   ],
   providers: [
     
