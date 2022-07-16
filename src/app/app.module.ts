@@ -15,9 +15,12 @@ import { IngerdientCardsComponent } from './Components/Ingredient/ingerdient-car
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
