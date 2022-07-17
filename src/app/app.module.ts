@@ -9,6 +9,9 @@ import { IngerdientCardsComponent } from './Components/Ingredient/ingerdient-car
 import { SignUpComponent } from './Components/Account/sign-up/sign-up.component';
 import { LogInComponent } from './Components/Account/log-in/log-in.component';
 import { LogOutComponent } from './Components/Account/log-out/log-out.component';
+import { RestaurantComponent } from './Components/restaurant/restaurant.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RestaurantListComponent } from './Components/restaurant-list/restaurant-list.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +21,15 @@ import { LogOutComponent } from './Components/Account/log-out/log-out.component'
     SignUpComponent,
     LogInComponent,
     LogOutComponent,
+    RestaurantComponent,
+    RestaurantListComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
