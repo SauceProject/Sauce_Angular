@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IngerdientListComponent } from './Components/Ingredient/ingerdient-list/ingerdient-list.component';
@@ -11,10 +10,12 @@ import { HttpClient } from '@angular/common/http';
 import { SignUpComponent } from './Components/Account/sign-up/sign-up.component';
 import { LogInComponent } from './Components/Account/log-in/log-in.component';
 import { LogOutComponent } from './Components/Account/log-out/log-out.component';
+import { RestaurantComponent } from './Components/restaurant/restaurant.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RestaurantListComponent } from './Components/restaurant-list/restaurant-list.component';
 import { RecipeCardComponent } from './Components/Recipe/recipe-card/recipe-card.component';
 import { RecipeListComponent } from './Components/Recipe/recipe-list/recipe-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { RecipeServices } from './Services/RecipeServices';
 
 @NgModule({
@@ -25,6 +26,8 @@ import { RecipeServices } from './Services/RecipeServices';
     SignUpComponent,
     LogInComponent,
     LogOutComponent,
+    RestaurantComponent,
+    RestaurantListComponent,
     RecipeCardComponent,
     RecipeListComponent,
     
@@ -34,6 +37,10 @@ import { RecipeServices } from './Services/RecipeServices';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  
+   
 
   ],
   providers: [
