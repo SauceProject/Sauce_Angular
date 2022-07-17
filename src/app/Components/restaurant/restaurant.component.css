@@ -12,38 +12,6 @@
     transition: all .2s linear;
 }
 
-html{
-    font-size: 62.5%;
-    overflow-x: hidden;
-    scroll-padding-top: 5.5px;
-    scroll-behavior: smooth;
-    background-color: #143444;
-
- 
-}
-
-
-section{
-    padding:2px 9%;
-}
-
-
-.sub-heading{
-    text-align: center;
-    color:#e2d11a;
-    font-size: 3rem;
-    padding-top: 1rem;
-  
-}
-
-
-.heading{
-    text-align: center;
-    color:#143444;
-    font-size: 3px;
-    padding-bottom: 2px;
-    text-transform: uppercase;
-}
 
 .btn{
     margin-top: 20px;
@@ -62,14 +30,10 @@ section{
     letter-spacing: 1px;
     color: #143444;
 }
-.dishes .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap:25px;
-}
 
-.dishes .box-container .box{
-    padding:2.5px;
+
+.box{
+    padding:5px;
     background:#fff;
     border-radius: 10px;
     border:.1px solid #143444;
@@ -80,8 +44,8 @@ section{
     
 }
 
-.dishes .box-container .box .fa-heart,
-.dishes .box-container .box .fa-eye{
+ .box .fa-heart,
+ .box .fa-eye{
     position: absolute;
     top:1.5rem;
     background:#eee;
@@ -93,53 +57,58 @@ section{
     color: #143444;
 }
 
-.dishes .box-container .box .fa-heart:hover{
+ .box .fa-heart:hover{
     background-color: #F6EE99;
     color:red;
 }
 
 
-.dishes .box-container .box .fa-eye:hover{
+ .box .fa-eye:hover{
     background: #F6EE99;
     color:#fff;
 }
 
-.dishes .box-container .box .fa-heart{
+ .box .fa-heart{
     right:-45px;
 }
 
-.dishes .box-container .box .fa-eye{
+ .box .fa-eye{
     left:-45px;
 }
 
-.dishes .box-container .box:hover .fa-heart{
+ .box:hover .fa-heart{
     right:20px;
 }
 
-.dishes .box-container .box:hover .fa-eye{
+ .box:hover .fa-eye{
     left:20px;
 }
 
-.dishes .box-container .box img{
+ .box img{
     height:17rem;
     margin:1rem 0;
 }
 
-.dishes .box-container .box h3{
+ .box h3{
     color:#143444;
     font-size: 25px;
 }
+.box h4{
+    color: gray;
+    font-size: 16px;
 
-.dishes .box-container .box .stars{
+}
+
+ .box .stars{
     padding:15px 0;
 }
 
-.dishes .box-container .box .stars i{
+ .box .stars i{
     font-size: 20px;
     color:yellow;
 }
 
-.dishes .box-container .box span{
+ .box span{
     color:#e2d11a;
     font-weight: bolder;
     margin-right: 15px;
