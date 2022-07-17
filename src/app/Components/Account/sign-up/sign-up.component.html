@@ -31,7 +31,7 @@
 				<br>
 				<input type="number"  formControlName="Phone" placeholder="Phone">
         <span class="text-danger" *ngIf="form.controls['Phone'].hasError('required')">Required Phone</span>
-        <span class="text-danger" *ngIf="form.controls['Phone'].hasError('email')">Must be 11 Numbers</span>
+        <span class="text-danger" *ngIf="form.controls['Phone'].hasError('minlength')">Must be 11 Numbers</span>
 				<br>
 				<input type="password" formControlName="Password" placeholder="Password">
         <span class="text-danger" *ngIf="form.controls['Password'].hasError('required')">Required Password</span>
@@ -54,7 +54,7 @@
 			</div>
 
 			<br>
-			<button [disabled]="form.invalid">Register Now</button>
+			<button type="submit" [disabled]="form.invalid" (click)="add()">Register Now</button>
 		</div>
 
 	</div>
