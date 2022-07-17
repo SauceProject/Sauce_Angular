@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IngerdientListComponent } from './Components/Ingredient/ingerdient-list/ingerdient-list.component';
 import { IngerdientCardsComponent } from './Components/Ingredient/ingerdient-cards/ingerdient-cards.component';
+import { FormBuilder } from '@angular/forms';
+import { ingerdientServices } from './Services/ingerdientservices';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,12 @@ import { IngerdientCardsComponent } from './Components/Ingredient/ingerdient-car
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // HttpClientMoule
+    FormBuilder,
+    HttpClient,
+
   ],
   providers: [
+    ingerdientServices,
     
   ],
   bootstrap: [AppComponent]
