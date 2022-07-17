@@ -10,6 +10,9 @@ import { LogInComponent } from './Components/Account/log-in/log-in.component';
 import { LogOutComponent } from './Components/Account/log-out/log-out.component';
 import { RecipeCardComponent } from './Components/Recipe/recipe-card/recipe-card.component';
 import { RecipeListComponent } from './Components/Recipe/recipe-list/recipe-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RecipeServices } from './Services/RecipeServices';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,11 @@ import { RecipeListComponent } from './Components/Recipe/recipe-list/recipe-list
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // HttpClientMoule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
+    RecipeServices
     
   ],
   bootstrap: [AppComponent]
