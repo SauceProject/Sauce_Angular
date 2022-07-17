@@ -32,15 +32,14 @@ import { RecipeServices } from './Services/RecipeServices';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormBuilder,
-    HttpClient,
+    HttpClientModule,
+    ReactiveFormsModule,
 
   ],
   providers: [
     ingerdientServices,
-    ReactiveFormsModule,
-    HttpClientModule,
-    RecipeServices
+    
+    RecipeServices,
   ],
  
   bootstrap: [AppComponent]

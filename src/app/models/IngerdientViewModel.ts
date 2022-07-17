@@ -1,5 +1,5 @@
 export class ingerdientviewmodel{
-    NameEn:string="";
-    NameAr:string="";
+    nameEN:string="";
+    nameAR:string="";
     uploadedimg:string="";
 }

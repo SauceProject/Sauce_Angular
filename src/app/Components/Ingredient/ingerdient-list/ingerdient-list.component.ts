@@ -10,34 +10,22 @@ import { ingerdientServices } from 'src/app/Services/ingerdientservices';
   styleUrls: ['./ingerdient-list.component.css']
 })
 export class IngerdientListComponent implements OnInit {
-  Form:FormGroup=new FormGroup([]);
-  constructor( private formBuilder:FormBuilder ,private ingerdientservices :ingerdientServices,private Http:HttpClient ) {}
+  Ingredients:ingerdientviewmodel[]=[];
+  constructor( private ingerdientservices :ingerdientServices ) {}
   
 
   ngOnInit(): void {
-  this.build()
-  }
-  build(ingerdient?:ingerdientviewmodel){
-
-    this.Form=this.formBuilder.group(
+    this.ingerdientservices.getIngerdient().subscribe(res=> 
       {
-        nameEn:[''],
-        nameAr:[''],
-        uploadedimg:['']
-    });
-
-
+        console.log(res.data.data);
+      
+       this.Ingredients=res.data.data
+      })
+      }
   }
+  
 
-  add(){
-    let ingerdient:ingerdientviewmodel=new ingerdientviewmodel();
+  
 
-    ingerdient.NameEn=this.Form.value["nameEn"];
-    ingerdient.NameAr=this.Form.value["nameAr"];
-    ingerdient.uploadedimg=this.Form.value["uploadedimg"];
-    console.log(ingerdient);
-    this.ingerdientservices.addIngerdient(ingerdient).subscribe();
-}
-}
 
 
