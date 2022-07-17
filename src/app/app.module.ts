@@ -9,6 +9,8 @@ import { IngerdientCardsComponent } from './Components/Ingredient/ingerdient-car
 import { SignUpComponent } from './Components/Account/sign-up/sign-up.component';
 import { LogInComponent } from './Components/Account/log-in/log-in.component';
 import { LogOutComponent } from './Components/Account/log-out/log-out.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AccountServices } from './Services/Account';
 
 @NgModule({
   declarations: [
@@ -18,14 +20,17 @@ import { LogOutComponent } from './Components/Account/log-out/log-out.component'
     SignUpComponent,
     LogInComponent,
     LogOutComponent,
-    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    AccountServices,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
