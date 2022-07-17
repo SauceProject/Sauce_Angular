@@ -1,29 +1,24 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
+import { LoginViewModel, SignUpViewModel } from "../models/Login";
 import { ResultViewModel } from "../models/ResultViewModel";
-import { Student, StudentCreateViewModel, StudentEditViewModel } from "../models/SignUp";
+import { SignUp, StudentCreateViewModel, StudentEditViewModel } from "../models/SignUp";
 
 @Injectable()
-export class StudentServices{
+export class AccountServices{
     constructor(private http:HttpClient){}
-    url:string=environment.apiURl
-    addStudent(Student:StudentCreateViewModel){
-        return this.http.post<ResultViewModel>(this.url+ "Student/post",Student)
+
+    login(log:LoginViewModel){
+      return this.http.post<ResultViewModel>(environment.apiURl+'user/login',log);
     }
-    getStudent(){
-        return this.http.get<ResultViewModel>( environment.apiURl+"Student/get")
+
+    SignUp(log:SignUpViewModel){
+      return this.http.post<ResultViewModel>(environment.apiURl+'user/Post',log);
     }
-    getStudentById(id:number){
-        return this.http.get<ResultViewModel>( environment.apiURl+"Student/getbyid?id="+id)
+
+    LogOut(token:string){
+      return this.http.post<ResultViewModel>(environment.apiURl,{token:token});
     }
-    getStudentEditableByID(id:number){
-        return this.http.get<ResultViewModel>( environment.apiURl+"Student/GetEditableByID?id="+id)
-    }
-    deleteStudent(id:number){
-        return this.http.delete<ResultViewModel>(this.url+ "Student/delete?id="+id)
-    }
-    updateStudent(Student:StudentEditViewModel){
-        return this.http.put<ResultViewModel>(this.url+"Student/put",Student)
-    }
+
 }

@@ -1,27 +1,26 @@
-export class Student{
-  ID:number= 0;
-  Name: string ='';
-  Mobile: string = '';
-  Email: string ='';
-  NationalID: string='';
-  Age: number=0;
+export class SignUp{
+  Name:string='';
+  UserName: string ='';
+  Phone: Number = 0;
+  Password: Number=0;
+  ConfirmPassword: number=0;
 }
 export class StudentEditViewModel{
   ID:number= 0;
-  FirstName: string ='';
-  LastName: string ='';
-  NameArabic: string = ''
-  NameEnglish: string = ''
-  Mobile: string = '';
+  // FirstName: string ='';
+  // LastName: string ='';
+  // NameArabic: string = ''
+  // NameEnglish: string = ''
   Email: string ='';
-  NationalID: string='';
-  Age: number=0;
+  Phone: Number = 0;
+  Password: Number=0;
+  ConfirmPassword: number=0;
 }
 export class StudentCreateViewModel{
-  FirstName: string ='';
-  LastName: string ='';
-  Mobile: string = '';
+  // FirstName: string ='';
+  // LastName: string ='';
   Email: string ='';
-  NationalID: string='';
-  Age: number=0;
+  Phone: Number = 0;
+  Password: Number=0;
+  ConfirmPassword: number=0;
 }
