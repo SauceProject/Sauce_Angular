@@ -10,11 +10,11 @@
     />
   </head>
   <body>
-    <h3 class="sub-heading">Ingerdient</h3>
+    <h3 class="sub-heading">Recipes</h3>
     <main>
-      <section class="dishes" id="dishes" *ngFor="let item of Ingredients">
+      <section class="dishes" id="dishes" *ngFor="let item of Recipes">
         <div class="box-container">
-          <app-ingerdient-cards [ingerdient]="item"></app-ingerdient-cards>
+          <app-recipe-card [recipe]="item"></app-recipe-card>
         </div>
       </section>
     </main>

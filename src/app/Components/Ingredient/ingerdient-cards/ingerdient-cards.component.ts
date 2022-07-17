@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ingerdientviewmodel } from 'src/app/models/IngerdientViewModel';
+import { ingerdientServices } from 'src/app/Services/ingerdientservices';
 
 @Component({
   selector: 'app-ingerdient-cards',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IngerdientCardsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor( private ingerdientServices:ingerdientServices) { }
+  
+@Input() ingerdient:ingerdientviewmodel = new ingerdientviewmodel()
   ngOnInit(): void {
+    
   }
 
 }
