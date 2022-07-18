@@ -17,6 +17,7 @@ import { RecipeCardComponent } from './Components/Recipe/recipe-card/recipe-card
 import { RecipeListComponent } from './Components/Recipe/recipe-list/recipe-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecipeServices } from './Services/RecipeServices';
+import { RestaurantServices } from './Services/RestaurantServices';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { RecipeServices } from './Services/RecipeServices';
     ingerdientServices,
     AccountServices,
     RecipeServices,
+    RestaurantServices,
   ],
   bootstrap: [AppComponent]
 })

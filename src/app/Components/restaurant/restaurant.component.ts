@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { ResConfig } from 'src/app/models/Restaurant/ResConfig';
+import { Component, Input, OnInit } from '@angular/core';
+import { Restaurant } from 'src/app/models/Restaurant';
+import { RestaurantServices } from 'src/app/Services/RestaurantServices';
+import { RecipeServices } from 'src/app/Services/RecipeServices';
+
 
 @Component({
   selector: 'app-restaurant',
@@ -9,13 +11,11 @@ import { ResConfig } from 'src/app/models/Restaurant/ResConfig';
 })
 export class RestaurantComponent implements OnInit {
 
-  restaurant:RestaurantComponent[]=[];
-  constructor(private Http:HttpClient) { }
+ @Input() restaurant:Restaurant = new Restaurant();
 
   ngOnInit(): void {
-    this.Http.get<ResConfig>("https://localhost:5001/RestaurantAPI/Get").subscribe(Response=>{
-      console.log(Response.data)
-    })
+    
+    }
   }
 
-}
+
