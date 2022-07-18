@@ -42,7 +42,7 @@ export class SignUpComponent implements OnInit {
     this.acc.SignUp(SignUP).subscribe(res=>{
       console.log(res)
       console.log('www')
-      if(res.Success){
+      if(res.success){
         this.router.navigateByUrl('UserAPI/SignIn')
       }
       else{
@@ -52,7 +52,7 @@ export class SignUpComponent implements OnInit {
         console.log(this.form.errors)
       }
     },err=>{
-      alert(err);
+      console.log(err);
     })
   }
 
