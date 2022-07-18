@@ -1,26 +1,9 @@
-export class SignUp{
-  Name:string='';
-  UserName: string ='';
-  Phone: Number = 0;
-  Password: Number=0;
-  ConfirmPassword: number=0;
-}
-export class StudentEditViewModel{
-  ID:number= 0;
-  // FirstName: string ='';
-  // LastName: string ='';
-  // NameArabic: string = ''
-  // NameEnglish: string = ''
-  Email: string ='';
-  Phone: Number = 0;
-  Password: Number=0;
-  ConfirmPassword: number=0;
-}
-export class StudentCreateViewModel{
-  // FirstName: string ='';
-  // LastName: string ='';
-  Email: string ='';
-  Phone: Number = 0;
-  Password: Number=0;
-  ConfirmPassword: number=0;
+export class SignUpViewModel{
+  ConfirnmPassword:number=0;
+  Email:string='';
+  NameAR:string='';
+  NameEN:string='';
+  Password:number=0;
+  Role:string='';
+  phone:number=0;
 }

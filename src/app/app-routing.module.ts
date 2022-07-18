@@ -5,8 +5,8 @@ import { LogOutComponent } from './Components/Account/log-out/log-out.component'
 import { SignUpComponent } from './Components/Account/sign-up/sign-up.component';
 
 const routes: Routes = [
-  {path:"login",component:LogInComponent},
-  {path:"SignUp",component:SignUpComponent},
+  {path:"UserAPI/SignIn",component:LogInComponent},
+  {path:"UserAPI/SignUp",component:SignUpComponent},
   {path:"LogOut",component:LogOutComponent},
 
 

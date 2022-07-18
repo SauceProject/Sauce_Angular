@@ -24,17 +24,17 @@ export class LogInComponent implements OnInit {
   }
   add(){
     let log =new LoginViewModel();
-    log.UserName=this.form.value["Email"]
+    log.Email=this.form.value["Email"]
     log.Password=this.form.value["Password"]
     this.acc.login(log).subscribe(res=>{
       if(res.Success){
         localStorage.setItem('token',res.data);
-        localStorage.setItem('username',log.UserName);
+        localStorage.setItem('username',log.Email);
         this.router.navigateByUrl('/')
       }else{
         alert('try Again!!');
       }
-    },err=>alert(err))
+    },err=>console.log(err))
   }
 
 }
