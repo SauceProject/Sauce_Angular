@@ -27,12 +27,14 @@ export class LogInComponent implements OnInit {
     log.Email=this.form.value["Email"]
     log.Password=this.form.value["Password"]
     this.acc.login(log).subscribe(res=>{
-      if(res.Success){
+      if(res.success){
         localStorage.setItem('token',res.data);
         localStorage.setItem('username',log.Email);
         this.router.navigateByUrl('/')
+        console.log(res);
       }else{
         alert('try Again!!');
+        console.log(res);
       }
     },err=>console.log(err))
   }
