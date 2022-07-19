@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IngerdientListComponent } from './Components/Ingredient/ingerdient-list/ingerdient-list.component';
 import { IngerdientCardsComponent } from './Components/Ingredient/ingerdient-cards/ingerdient-cards.component';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormsModule } from '@angular/forms';
 import { ingerdientServices } from './Services/ingerdientservices';
 import { SignUpComponent } from './Components/Account/sign-up/sign-up.component';
 import { LogInComponent } from './Components/Account/log-in/log-in.component';

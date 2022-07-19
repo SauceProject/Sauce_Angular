@@ -1,5 +1,5 @@
 export class Restaurant{
-   
+
     workTime:Date = new Date;
     nameEN :string="";
     RegisterDate :Date = new Date;
@@ -7,4 +7,4 @@ export class Restaurant{
     ImageUrl :string='';
 
 
-} 
+}
