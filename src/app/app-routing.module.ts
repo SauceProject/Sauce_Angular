@@ -16,10 +16,10 @@ const routes: Routes = [
   {path:"LogOut",component:LogOutComponent},
   {path:"restaurant",component:RestaurantComponent},
   {path:"recipe-Card",component:RecipeCardComponent},
-  {path:"recipe-List",component:RecipeListComponent},
+  {path:"Recipes",component:RecipeListComponent},
   {path:"ingerdient-Card",component:IngerdientCardsComponent},
-  {path:"ingerdient-List",component:IngerdientListComponent},
-  {path:"Restaurant-List",component:RestaurantListComponent}
+  {path:"Ingredients",component:IngerdientListComponent},
+  {path:"Restaurants",component:RestaurantListComponent}
 
 
 

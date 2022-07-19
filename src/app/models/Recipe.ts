@@ -4,6 +4,7 @@ export class Recipe{
     imageUrl:string="";
     categoryID:string="";
     goodFor:number=0;
+    isDeleted:boolean=false;
 
 
 } 
