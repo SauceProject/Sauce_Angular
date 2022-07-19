@@ -11,4 +11,8 @@ export class RestaurantServices
     getRestaurant(){
         return this.Http.get<ResultViewModel>("https://localhost:5001/RestaurantAPI/Get")
     }
+    getRestByName(rName:string){
+        return this.Http.get<ResultViewModel>("https://localhost:5001/RestaurantAPI/Get?nameEN="+rName)
+    }
+    
 }

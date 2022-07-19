@@ -19,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RecipeServices } from './Services/RecipeServices';
 import { RestaurantServices } from './Services/RestaurantServices';
 import { NavbarComponent } from './Components/Nav/navbar/navbar.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { NavbarComponent } from './Components/Nav/navbar/navbar.component';
     RecipeCardComponent,
     RecipeListComponent,
     NavbarComponent,
+    FooterComponent,
 
   ],
   imports: [
