@@ -12,6 +12,7 @@ import { RecipeServices } from 'src/app/Services/RecipeServices';
 export class RestaurantComponent implements OnInit {
 
  @Input() restaurant:Restaurant = new Restaurant();
+ @Input() rateval:number=0;
 
   ngOnInit(): void {
 

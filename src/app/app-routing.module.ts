@@ -9,6 +9,9 @@ import { RecipeCardComponent } from './Components/Recipe/recipe-card/recipe-card
 import { RecipeListComponent } from './Components/Recipe/recipe-list/recipe-list.component';
 import { RestaurantComponent } from './Components/restaurant/restaurant.component';
 import { RestaurantListComponent } from './Components/restaurant-list/restaurant-list.component';
+import { CartComponent } from './Components/cart/cart.component';
+import { OurTeamComponent } from './Components/our-team/our-team.component';
+import { FavComponent } from './Components/fav/fav.component';
 
 const routes: Routes = [
   {path:"UserAPI/SignIn",component:LogInComponent},
@@ -19,7 +22,13 @@ const routes: Routes = [
   {path:"Recipes",component:RecipeListComponent},
   {path:"ingerdient-Card",component:IngerdientCardsComponent},
   {path:"Ingredients",component:IngerdientListComponent},
-  {path:"Restaurants",component:RestaurantListComponent}
+  {path:"Restaurants",component:RestaurantListComponent},
+  {path:"Cart",component:CartComponent},
+  {path:"OurTeam",component:OurTeamComponent},
+  {path:"Fav",component:FavComponent},
+
+
+
 
 
 
