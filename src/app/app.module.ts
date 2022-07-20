@@ -23,6 +23,7 @@ import { RatingComponent } from './Components/rating/rating.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { OurTeamComponent } from './Components/our-team/our-team.component';
 import { FavComponent } from './Components/fav/fav.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { FavComponent } from './Components/fav/fav.component';
     CartComponent,
     OurTeamComponent,
     FavComponent,
+    FooterComponent,
 
   ],
   imports: [

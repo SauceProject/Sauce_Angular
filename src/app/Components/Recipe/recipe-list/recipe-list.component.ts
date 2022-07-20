@@ -25,19 +25,34 @@ export class RecipeListComponent implements OnInit {
       })
       this.RecipeService.getCategories().subscribe(res=>
         {
-          this.Categories=res.data.data         
+          
+          this.Categories=res.data.data ;
         })       
   }
 
   
   getByCategory(cName:string){
-    this.RecipeService.getByCategory(cName).subscribe(res=>
-        {
-          console.log(res);
-          this.unfiltered=res.data
-          this.Recipes=this.unfiltered.filter(i=>i.isDeleted == false && i.nameEN.includes(this.recipeName))
-        })
-
+    this.Categories.filter(i=>{
+      if(i.nameEN==cName)
+      {
+        i.isChecked=!i.isChecked
+      }
+    })
+    this.Recipes=[];
+    this.Categories.forEach(c=>{
+      if(c.isChecked==true)
+      {
+        this.RecipeService.getByCategory(c.nameEN).subscribe(res=>
+          {
+            console.log(res);
+            this.unfiltered=res.data
+            this.Recipes.push(...this.unfiltered.filter(i=>i.isDeleted == false && i.nameEN.includes(this.recipeName)))
+          })
+        
+      }
+      
+    })    
+  console.log(this.Categories)
   }
   getName(val:string){
     this.recipeName=val;

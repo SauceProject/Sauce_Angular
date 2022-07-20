@@ -11,6 +11,7 @@ import { ingerdientServices } from 'src/app/Services/ingerdientservices';
 })
 export class IngerdientListComponent implements OnInit {
   Ingredients:ingerdientviewmodel[]=[];
+  IngName:string="";
   constructor( private ingerdientservices :ingerdientServices ) {}
   
 
@@ -21,6 +22,21 @@ export class IngerdientListComponent implements OnInit {
       
        this.Ingredients=res.data.data
       })
+      }
+      getName(val:string){
+        this.IngName=val;
+      }
+      getIngByName(){
+        //console.log(this.restName)
+        if(this.IngName!=="")
+            {
+            this.ingerdientservices.getIngByName(this.IngName) .subscribe(res=>
+              {
+                console.log(res);
+                this.Ingredients=res.data
+              })
+            }
+           
       }
   }
   

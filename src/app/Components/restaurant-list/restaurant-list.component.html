@@ -13,8 +13,33 @@
     <section class="dishes" id="dishes" *ngFor="let item of restaurant" >
     <div class="box-container" >
         <app-restaurant [restaurant]="item" [rateval]="5"></app-restaurant>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="searchbar">
+      <input
+        id="search"
+        type="text"
+        placeholder=" Search"
+        #rr
+        (keyup)="getName(rr.value)"
+      />
+      <i class="fa-solid fa-magnifying-glass" (click)="getRestByName()"></i>
     </div>
-</section>
-</main>
-</body>
+    <h3 class="sub-heading">Restaurants</h3>
+    <main>
+      <section class="dishes" id="dishes" *ngFor="let item of restaurant">
+        <div class="box-container">
+          <app-restaurant [restaurant]="item"></app-restaurant>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
