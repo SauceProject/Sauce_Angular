@@ -24,6 +24,8 @@ import { CartComponent } from './Components/cart/cart.component';
 import { OurTeamComponent } from './Components/our-team/our-team.component';
 import { FavComponent } from './Components/fav/fav.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { CartServices } from './Services/Cart';
 
 @NgModule({
   declarations: [
@@ -52,12 +54,14 @@ import { FooterComponent } from './Components/footer/footer.component';
     HttpClientModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [
     ingerdientServices,
     AccountServices,
     RecipeServices,
     RestaurantServices,
+    CartServices,
   ],
   bootstrap: [AppComponent]
 })

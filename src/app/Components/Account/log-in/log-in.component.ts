@@ -28,7 +28,9 @@ export class LogInComponent implements OnInit {
     log.Password=this.form.value["Password"]
     this.acc.login(log).subscribe(res=>{
       if(res.success){
-        localStorage.setItem('token',res.data);
+        console.log(res.data);
+        localStorage.setItem('token',res.data.token);
+        localStorage.setItem('userId',res.data.userId);
         localStorage.setItem('username',log.Email);
         this.router.navigateByUrl('/')
         console.log(res);

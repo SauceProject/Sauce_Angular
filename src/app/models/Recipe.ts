@@ -1,5 +1,5 @@
 export class Recipe{
-    Id:number=0;
+    id:number=0;
     nameEN:string="";
     imageUrl:string="";
     categoryID:string="";
