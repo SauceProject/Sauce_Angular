@@ -20,6 +20,7 @@ export class CartServices{
          });
         return { headers: headers }; 
     }
+
     GetAllCart( ){
          
         return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetAPI",this.getheader());
@@ -28,12 +29,22 @@ export class CartServices{
     GetCart(){  
         return this.http.get<ResultViewModel>("https://localhost:5001/CartAPI/Get",this.getheader());
     }
+    GetRecipeById(RecipeID:number){
+        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetAPI?ID="+RecipeID,this.getheader());
+    }
     AddCart(Qty:number,Recipe_ID:number,userId:string){  
         let cart = new addcart()
         cart.qty=Qty;
         cart.recipe_ID = Recipe_ID;
         cart.UserId = userId
         return this.http.post<ResultViewModel>("https://localhost:5001/CartAPI/Add",cart,this.getheader());
+    }
+    UpdateCart(Qty:number,Recipe_ID:number,userId:string){  
+        let cart = new addcart()
+        cart.qty=Qty;
+        cart.recipe_ID = Recipe_ID;
+        cart.UserId = userId
+        return this.http.post<ResultViewModel>("https://localhost:5001/CartAPI/Update",cart,this.getheader());
     }
 
     RempveCart(CartID:number){  
@@ -42,9 +53,11 @@ export class CartServices{
     
 }
 export class addcart{
+    id=0;
     recipe_ID = 0;
     qty= 1;
     UserId="";
-    Price=0;
+    price=0;
+    recipe_Name=""
 
 }

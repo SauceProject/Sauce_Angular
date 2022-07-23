@@ -11,6 +11,7 @@ export class RecipeServices {
     getRecipesByName(rName:string){
         return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/Get?nameEN="+rName)
     }
+    
     getCategories(){
         return this.http.get<ResultViewModel>("https://localhost:5001/CategoryAPI/Get")
     }
