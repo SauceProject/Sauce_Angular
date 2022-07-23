@@ -12,10 +12,18 @@ import { Recipe } from './../../../models/Recipe';
 export class RecipeCardComponent implements OnInit {
   @Input() recipe:Recipe= new Recipe();
 CartItems:addcart[]=[];
+ @Input() rateval:number=0;
+ //isInCart:boolean=false;
+ btnDis:string="btnDis";
+ btn:string="btn";
+
+  hidden:string="hidden";
  AddTOCart(recipeID:number) {
-  console.log(recipeID) 
-  this.cart.AddCart(1,recipeID,this.acc.getCurrentUserId()).subscribe(res=>console.log(res));
+  
+    this.cart.AddCart(1,recipeID,this.acc.getCurrentUserId()).subscribe(res=>this.recipe.isInCart=res.data);
+  
 }
+
   constructor(private cart:CartServices,
     private acc :AccountServices) {   }
 

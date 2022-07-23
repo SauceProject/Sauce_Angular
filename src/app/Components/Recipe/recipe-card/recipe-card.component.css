@@ -24,12 +24,25 @@
     cursor: pointer;
     padding:10px 25px;
 }
-
 .btn:hover{
     background: #F6EE99;;
     letter-spacing: 1px;
     color: #143444;
 }
+.btnDis{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    font-size: 15px;
+    color:#fff;
+    background: green;
+    border-radius: 5px;
+    cursor: pointer;
+    padding:10px 25px;
+}
+
+
+
 
 
 .box{
