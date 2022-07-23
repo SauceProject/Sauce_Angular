@@ -11,7 +11,6 @@ import { Recipe } from './../../../models/Recipe';
 })
 export class RecipeCardComponent implements OnInit {
   @Input() recipe:Recipe= new Recipe();
- @Input() rateval:number=0;
 CartItems:addcart[]=[];
  AddTOCart(recipeID:number) {
   console.log(recipeID) 

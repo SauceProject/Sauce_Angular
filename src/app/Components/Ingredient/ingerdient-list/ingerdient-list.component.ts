@@ -15,7 +15,6 @@ export class IngerdientListComponent implements OnInit {
 
   //number of elements to get form database per request
   tableSize: number = 3;
-  tableSizes: any = [1, 5, 10, 20];
   Ingredients: ingerdientviewmodel[] = [];
   IngName: string = "";
   constructor(private ingerdientservices: ingerdientServices) { }
@@ -32,7 +31,8 @@ export class IngerdientListComponent implements OnInit {
     if (this.IngName !== "") {
       this.ingerdientservices.getIngByName(this.IngName).subscribe(res => {
         console.log(res);
-        this.Ingredients = res.data
+        this.Ingredients = res.data;
+      
       })
     }
 

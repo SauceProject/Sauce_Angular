@@ -5,6 +5,6 @@ export class Recipe{
     categoryID:string="";
     goodFor:number=0;
     isDeleted:boolean=false;
-
+    RateValue:number=0;
 
 } 

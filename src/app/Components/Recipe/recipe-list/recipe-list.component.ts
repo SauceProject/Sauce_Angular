@@ -36,13 +36,12 @@ export class RecipeListComponent implements OnInit {
       this.page = res.data.pageIndex;
       this.tableSize = res.data.pageSize;
       this.count = res.data.count;
-      this.Recipes = res.data;
+      this.Recipes = res.data.data;
     })
   }  
   onTableDataChange(event: any) {
     console.log(event);
     this.page = event;
-    this.tableSize = 3;
     this.fetchData();
     
       // this.RecipeService.getCategories().subscribe(res=>

@@ -1,15 +1,15 @@
 <div class="box" >
     <a href="#" class="fas fa-heart"></a>
-    <a href="#" class="fas fa-eye"></a>
+    <a [routerLink]="['/recipe/details',recipe.id]"  class="fas fa-eye"></a>
     <!-- <img src="{{recipe.imageUrl}}" alt=""> -->
     <h3>{{recipe.nameEN}}</h3>
   
     <h4>Good For  {{recipe.goodFor}} </h4>
     <div >
-  <app-rating [value]="rateval"></app-rating>
+  <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
 </div>
    <br>
    <br> 
     <div>$15.99</div>
-    <a class="btn"  (click)="AddTOCart(recipe.id)">add to cart</a>
+    <a  class="btn"  (click)="AddTOCart(recipe.id)">add to cart</a>
 </div>
