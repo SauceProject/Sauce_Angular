@@ -29,15 +29,15 @@ export class CartComponent implements OnInit {
     this.CartItem.forEach((element) => {
       this.cart
         .GetRecipeById(element.recipe_ID)
-        .subscribe((res) => (element.recipe_Name = res.data[0].nameEN));
+        .subscribe((res) => (element.recipe_Name = res.data.data[0].nameEN));
     });
     //console.log(this.CartItem);
   }
   GetRecipePrices() {
     this.CartItem.forEach((element) => {
       this.cart.GetRecipeById(element.recipe_ID).subscribe((res) => {
-        //console.log(res.data[0])
-        element.price = res.data[0].price * element.qty;
+        console.log(res.data)
+        element.price = res.data.data[0].price * element.qty;
       });
     });
     //console.log(this.CartItem);
