@@ -28,6 +28,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { CartServices } from './Services/Cart';
 import { OrderComponent } from './Components/order/order.component';
 import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
+import { OrderServices } from 'src/app/Services/OrderServices';
+
 
 @NgModule({
   declarations: [
@@ -53,7 +55,7 @@ import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recip
 
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -67,6 +69,7 @@ import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recip
     RecipeServices,
     RestaurantServices,
     CartServices,
+    OrderServices
   ],
   bootstrap: [AppComponent]
 })
