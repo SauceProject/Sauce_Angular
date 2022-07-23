@@ -26,6 +26,7 @@ import { FavComponent } from './Components/fav/fav.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CartServices } from './Services/Cart';
+import { OrderComponent } from './Components/order/order.component';
 import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
 
 @NgModule({
@@ -47,6 +48,7 @@ import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recip
     OurTeamComponent,
     FavComponent,
     FooterComponent,
+    OrderComponent,
     RecipeDetailsComponent,
 
   ],
