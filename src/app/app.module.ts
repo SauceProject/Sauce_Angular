@@ -58,7 +58,8 @@ import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recip
     HttpClientModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [
     ingerdientServices,

@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { isEmpty } from 'rxjs';
 import { Rating } from 'src/app/models/Rating';
 import { Recipe } from 'src/app/models/Recipe';
+import { PagingViewModel } from 'src/app/models/ResultViewModel';
 import { RecipeServices } from 'src/app/Services/RecipeServices';
 import { RatingComponent } from '../../rating/rating.component';
 import { Category } from './../../../models/Category';
@@ -23,6 +24,7 @@ export class RecipeListComponent implements OnInit {
   Rating:Rating[]=[];
   Categories:Category[]=[];
   recipeName:string="";
+  test:string[]=["one","two","three"]
   constructor( private RecipeService: RecipeServices) { }
 
   ngOnInit(): void {
@@ -32,11 +34,13 @@ export class RecipeListComponent implements OnInit {
   fetchData() {
     console.log(this.tableSize,this.page)
     this.RecipeService.getRecipes(this.tableSize,this.page).subscribe(res => {
+      let responce = res.data as PagingViewModel
+      this.page = responce.pageIndex;
+      this.tableSize = responce.pageSize;
+      this.count = responce.count;
+      this.Recipes = responce.data as Recipe[];
       console.log(res);
-      this.page = res.data.pageIndex;
-      this.tableSize = res.data.pageSize;
-      this.count = res.data.count;
-      this.Recipes = res.data.data;
+      console.log(this.Recipes);
     })
   }  
   onTableDataChange(event: any) {
