@@ -24,7 +24,11 @@ html{
 section{
     padding:2px 9%;
 }
+body{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
 
+}
 
 .sub-heading{
     text-align: center;
@@ -62,11 +66,34 @@ section{
 }
 main{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3,1fr);
     
 }
+aside{
+    padding: 1rem;
+    background-color: #F6EE99;
+    height: 100vh;
+    font-size: 1.1rem;
+    color: #143444;
 
+}
+aside h5{
+    font-size: 1.3rem;
+}
+aside .fa-magnifying-glass{
+    background-color: #143444;
+    color: #Fff;
+    padding: 0.2rem;
+    cursor: pointer;
+}
+.searchbar{
+    display: flex;
+    margin-bottom: 1rem;
 
+}
+aside #search{
+    height: 1.6rem;
+}
 @media (max-width:991px){
 
     html{

@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Login</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-  crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
-  <form [formGroup]="form" >
+	<!-- <form [formGroup]="form" >
 <div class="box-form">
 	<div class="left">
 		<div class="overlay">
@@ -39,7 +38,7 @@
 			<br><br>
 
 		<div class="remember-me--forget-password">
-				<!-- Angular -->
+		
 	<label>
 		<input type="checkbox" name="item" checked/>
 		<span class="text-checkbox">Remember me</span>
@@ -52,7 +51,61 @@
 	</div>
 
 </div>
-<!-- partial -->
-</form>
+
+</form> -->
+
+
+
+
+
+
+	<form class="login-form" [formGroup]="form" method="post">
+		<div class="login-wrap">
+			<div class="login-html">
+				<input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+				<label for="tab-1" class="tab">Sign In</label>
+
+				<label for="tab-2" class="tab"> <a routerLink="/UserAPI/SignUp">SignUp</a>
+				</label>
+				<div class="group">
+
+					<input type="text" class="input" formControlName="Email" placeholder="User Name">
+					<br>
+					<span class="text-danger" *ngIf="form.controls['Email'].hasError('required')">Required Email</span>
+					<span class="text-danger" *ngIf="form.controls['Email'].hasError('email')">Must be an Email
+						Patern</span>
+				</div>
+				<div class="group">
+					<input type="password" id="pass" class="input" formControlName="Password" placeholder="Password">
+					<span class="text-danger" *ngIf="form.controls['password'].hasError('required')">Required Password</span>
+
+				</div>
+				<div class="group">
+					<label>
+						<br>
+						<input type="checkbox" name="item" checked/>
+						<br>
+						<span class="text-checkbox">Remember me</span>
+						<br>
+					</label>
+							<p>Forget Password?</p>
+						
+				</div>
+				<div class="group">
+					<button type="submit" class="button" [disabled]='form.invalid' (click)="add()" >Login</button>
+				</div>
+				<div class="hr"></div>
+
+			</div>
+		</div>
+
+
+	</form>
+
+	<script src="~/Content/JS/vendor.js"></script>
+	<script src="~/Content/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.js"></script>
+
+
 </body>
+
 </html>

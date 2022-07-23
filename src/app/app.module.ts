@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IngerdientListComponent } from './Components/Ingredient/ingerdient-list/ingerdient-list.component';
 import { IngerdientCardsComponent } from './Components/Ingredient/ingerdient-cards/ingerdient-cards.component';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormsModule } from '@angular/forms';
 import { ingerdientServices } from './Services/ingerdientservices';
 import { SignUpComponent } from './Components/Account/sign-up/sign-up.component';
 import { LogInComponent } from './Components/Account/log-in/log-in.component';
@@ -18,6 +18,15 @@ import { RecipeListComponent } from './Components/Recipe/recipe-list/recipe-list
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecipeServices } from './Services/RecipeServices';
 import { RestaurantServices } from './Services/RestaurantServices';
+import { NavbarComponent } from './Components/Nav/navbar/navbar.component';
+import { RatingComponent } from './Components/rating/rating.component';
+import { CartComponent } from './Components/cart/cart.component';
+import { OurTeamComponent } from './Components/our-team/our-team.component';
+import { FavComponent } from './Components/fav/fav.component';
+import { FooterComponent } from './Components/footer/footer.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { CartServices } from './Services/Cart';
+import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +41,13 @@ import { RestaurantServices } from './Services/RestaurantServices';
     RestaurantListComponent,
     RecipeCardComponent,
     RecipeListComponent,
+    NavbarComponent,
+    RatingComponent,
+    CartComponent,
+    OurTeamComponent,
+    FavComponent,
+    FooterComponent,
+    RecipeDetailsComponent,
 
   ],
   imports: [
@@ -40,12 +56,14 @@ import { RestaurantServices } from './Services/RestaurantServices';
     HttpClientModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [
     ingerdientServices,
     AccountServices,
     RecipeServices,
     RestaurantServices,
+    CartServices,
   ],
   bootstrap: [AppComponent]
 })

@@ -8,12 +8,17 @@ import { SignUpViewModel } from "../models/SignUp";
 @Injectable()
 export class AccountServices{
     constructor(private http:HttpClient){}
-
+getCurrentUserId():string{
+  return localStorage.getItem("userId")??""
+}
     login(log:LoginViewModel){
       return this.http.post<ResultViewModel>(environment.apiURl+'UserAPI/SignIn',log);
     }
 
-    SignUp(log:SignUpViewModel){
+    SignUp(log:SignUpViewModel,Role:string){
+      let signup=new SignUpViewModel()
+      signup.Role=Role;
+
       return this.http.post<ResultViewModel>(environment.apiURl+'UserAPI/SignUp',log);
     }
 

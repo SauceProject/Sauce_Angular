@@ -12,6 +12,7 @@ export class IngerdientCardsComponent implements OnInit {
   constructor( private ingerdientServices:ingerdientServices) { }
   
 @Input() ingerdient:ingerdientviewmodel = new ingerdientviewmodel()
+
   ngOnInit(): void {
     
   }

@@ -8,7 +8,11 @@ import { ResultViewModel } from "../models/ResultViewModel";
 export class RestaurantServices
 {
     constructor(private Http:HttpClient) { }
-    getRestaurant(){
-        return this.Http.get<ResultViewModel>("https://localhost:5001/RestaurantAPI/Get")
+    getRestaurant(pageSize :number,pageIndex:number){
+        return this.Http.get<ResultViewModel>(`https://localhost:5001/RestaurantAPI/Get?pageSize=${pageSize}&pageIndex=${pageIndex}`)
     }
-}
+    getRestByName(rName:string){
+        return this.Http.get<ResultViewModel>("https://localhost:5001/RestaurantAPI/Get?nameEN="+rName)
+    }
+    
+} 

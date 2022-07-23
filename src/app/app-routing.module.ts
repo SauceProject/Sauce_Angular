@@ -9,6 +9,10 @@ import { RecipeCardComponent } from './Components/Recipe/recipe-card/recipe-card
 import { RecipeListComponent } from './Components/Recipe/recipe-list/recipe-list.component';
 import { RestaurantComponent } from './Components/restaurant/restaurant.component';
 import { RestaurantListComponent } from './Components/restaurant-list/restaurant-list.component';
+import { CartComponent } from './Components/cart/cart.component';
+import { OurTeamComponent } from './Components/our-team/our-team.component';
+import { FavComponent } from './Components/fav/fav.component';
+import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
 
 const routes: Routes = [
   {path:"UserAPI/SignIn",component:LogInComponent},
@@ -16,10 +20,18 @@ const routes: Routes = [
   {path:"LogOut",component:LogOutComponent},
   {path:"restaurant",component:RestaurantComponent},
   {path:"recipe-Card",component:RecipeCardComponent},
-  {path:"recipe-List",component:RecipeListComponent},
+  {path:"Recipes",component:RecipeListComponent},
   {path:"ingerdient-Card",component:IngerdientCardsComponent},
-  {path:"ingerdient-List",component:IngerdientListComponent},
-  {path:"Restaurant-List",component:RestaurantListComponent}
+  {path:"Ingredients",component:IngerdientListComponent},
+  {path:"Restaurants",component:RestaurantListComponent},
+  {path:"Cart",component:CartComponent},
+  {path:"OurTeam",component:OurTeamComponent},
+  {path:"Fav",component:FavComponent},
+  {path:"recipe/details/:id",component:RecipeDetailsComponent},
+
+
+
+
 
 
 

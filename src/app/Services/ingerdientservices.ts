@@ -12,9 +12,12 @@ import { ResultViewModel } from "../models/ResultViewModel";
 
 export class ingerdientServices{
     constructor (private http:HttpClient){}
-    getIngerdient( ){
+    getIngerdient(pageSize :number,pageIndex:number ){
         
-        return this.http.get<ResultViewModel>("https://localhost:5001/IngredientAPI/Get");
+        return this.http.get<ResultViewModel>(`https://localhost:5001/IngredientAPI/Get?pageSize=${pageSize}&pageIndex=${pageIndex}`);
+    }
+    getIngByName(rName:string){
+        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/Get?nameEN="+rName)
     }
    
     

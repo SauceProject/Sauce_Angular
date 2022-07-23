@@ -13,7 +13,7 @@
 }
 
 html{
-    font-size: 62.5%;
+    /* font-size: 62.5%; */
     overflow-x: hidden;
     scroll-padding-top: 5.5px;
     scroll-behavior: smooth;
@@ -64,6 +64,23 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     
+}
+.fa-magnifying-glass{
+    background-color: #143444;
+    color: #Fff;
+    padding: 0.2rem;
+    cursor: pointer;
+}
+.searchbar{
+    display: flex;
+    margin-bottom: 1rem;
+    margin-left: 3%;
+
+}
+ #search{
+    height: 1.6rem;
+    border: 1px grey solid;
+
 }
 
 
