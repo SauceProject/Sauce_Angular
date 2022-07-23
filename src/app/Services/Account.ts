@@ -15,7 +15,10 @@ getCurrentUserId():string{
       return this.http.post<ResultViewModel>(environment.apiURl+'UserAPI/SignIn',log);
     }
 
-    SignUp(log:SignUpViewModel){
+    SignUp(log:SignUpViewModel,Role:string){
+      let signup=new SignUpViewModel()
+      signup.Role=Role;
+
       return this.http.post<ResultViewModel>(environment.apiURl+'UserAPI/SignUp',log);
     }
 

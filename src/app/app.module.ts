@@ -27,6 +27,7 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CartServices } from './Services/Cart';
 import { OrderComponent } from './Components/order/order.component';
+import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { OrderComponent } from './Components/order/order.component';
     FavComponent,
     FooterComponent,
     OrderComponent,
+    RecipeDetailsComponent,
 
   ],
   imports: [

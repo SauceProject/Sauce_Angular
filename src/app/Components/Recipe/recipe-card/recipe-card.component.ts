@@ -11,6 +11,7 @@ import { Recipe } from './../../../models/Recipe';
 })
 export class RecipeCardComponent implements OnInit {
   @Input() recipe:Recipe= new Recipe();
+CartItems:addcart[]=[];
  @Input() rateval:number=0;
  //isInCart:boolean=false;
  btnDis:string="btnDis";

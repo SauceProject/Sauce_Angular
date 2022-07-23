@@ -32,14 +32,14 @@ export class SignUpComponent implements OnInit {
     let SignUP =new SignUpViewModel();
     SignUP.NameEN=this.form.value["NameEN"];
     SignUP.NameAR=this.form.value["NameAR"];
-    SignUP.Role=this.form.value["Role"];
+    SignUP.Role="User";
     SignUP.Email=this.form.value["Email"];
     SignUP.Password=this.form.value["Password"];
     SignUP.ConfirnmPassword=this.form.value["ConfirmPassword"];
     SignUP.phone=this.form.value["Phone"];
     console.log(SignUP);
 
-    this.acc.SignUp(SignUP).subscribe(res=>{
+    this.acc.SignUp(SignUP,'Admin').subscribe(res=>{
       console.log(res)
       console.log('www')
       if(res.success){

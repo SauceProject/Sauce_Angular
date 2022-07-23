@@ -13,6 +13,7 @@ import { CartComponent } from './Components/cart/cart.component';
 import { OurTeamComponent } from './Components/our-team/our-team.component';
 import { FavComponent } from './Components/fav/fav.component';
 import { OrderComponent } from './Components/order/order.component';
+import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
 
 const routes: Routes = [
   {path:"UserAPI/SignIn",component:LogInComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:"Fav",component:FavComponent},
   {path:"Order",component:OrderComponent},
   
+  {path:"recipe/details/:id",component:RecipeDetailsComponent},
 
 
 
