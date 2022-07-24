@@ -34,7 +34,7 @@ section:nth-child(even){
     text-align: center;
     color:#e2d11a;
     font-size: 2rem;
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
   
 }
 
@@ -42,20 +42,21 @@ section:nth-child(even){
     text-align: center;
     color:#143444;
     font-size: 2rem;
-    padding-bottom: 3rem;
+    padding-bottom: 10px;
     text-transform: uppercase;
 }
 
 .btn{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    /* margin-top: 20px; */
+    margin-bottom: 15px;
     display: inline-block;
     font-size: 15px;
     color:#fff;
     background: #143444;
     border-radius: 5px;
     cursor: pointer;
-    padding:10px 25px;
+    padding:5px 15px;
+    
 }
 
 .btn:hover{
@@ -119,7 +120,9 @@ section  .home-slider .slide{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap:1.5rem;
-    margin-bottom: 20px
+    /* margin-bottom: 20px; */
+
+    
 }
 
 .dishes .box-container .box{
@@ -136,7 +139,7 @@ section  .home-slider .slide{
 .dishes .box-container .box .fa-heart,
 .dishes .box-container .box .fa-eye{
     position: absolute;
-    top:1.5rem;
+    top:20px;
     background:#eee;
     border-radius: 50%;
     height: 45px;
@@ -191,11 +194,11 @@ section  .home-slider .slide{
     color:#e2d11a;
     font-weight: bolder;
     margin-right: 15px;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .dishes .box-container .box .stars{
-    padding:15px 0;
+    /* padding:15px 0; */
 }
 
 .dishes .box-container .box .stars i{
@@ -206,7 +209,7 @@ section  .home-slider .slide{
 .dishes .box-container .box span{
     color:#e2d11a;
     font-weight: bolder;
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
     font-size: 2.5rem;
 }
 
@@ -350,7 +353,7 @@ section  .home-slider .slide{
 }
 
 section .item{
-    padding: 2rem 9%;
+    padding: 50px 9%;
 }
 
 
@@ -369,16 +372,16 @@ section .item{
 
 
 .item  img{
-    height: 10rem;
-    width: 15rem;
-margin-left: 10rem; 
-margin-top: 5rem;   
+    height: 100px;
+    width: 150px;
+margin-left: 70px; 
+margin-top: 20px;   
 }
 .item img:hover{
-    height: 11rem;
-    width: 16rem;
+    height: 110px;
+    width: 160px;
     box-shadow: 4px 4px 4px 4px #f6ee99ae;
-    border-radius: 2rem;
+    border-radius: 20px;
  
     
 }
