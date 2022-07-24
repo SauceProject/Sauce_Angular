@@ -14,6 +14,7 @@ import { OurTeamComponent } from './Components/our-team/our-team.component';
 import { FavComponent } from './Components/fav/fav.component';
 import { OrderComponent } from './Components/order/order.component';
 import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
+import { OrderHistoryComponent } from './Components/order-history/order-history.component';
 
 const routes: Routes = [
   {path:"UserAPI/SignIn",component:LogInComponent},
@@ -29,7 +30,7 @@ const routes: Routes = [
   {path:"OurTeam",component:OurTeamComponent},
   {path:"Fav",component:FavComponent},
   {path:"Order",component:OrderComponent},
-  
+  {path:"OrderHistory",component:OrderHistoryComponent},
   {path:"recipe/details/:id",component:RecipeDetailsComponent},
 
 

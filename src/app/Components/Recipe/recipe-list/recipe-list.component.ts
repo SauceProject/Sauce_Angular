@@ -39,20 +39,22 @@ export class RecipeListComponent implements OnInit {
       this.tableSize = responce.pageSize;
       this.count = responce.count;
       this.Recipes = responce.data as Recipe[];
-      console.log(res);
-      console.log(this.Recipes);
+      //console.log(res);
+      //console.log(this.Recipes);
+      this.getRecipesByName();
+      this.RecipeService.getCategories().subscribe(res=>
+        {
+          console.log(res.data)
+          this.Categories=res.data ;
+        })    
     })
   }  
   onTableDataChange(event: any) {
-    console.log(event);
+   // console.log(event);
     this.page = event;
     this.fetchData();
     
-      // this.RecipeService.getCategories().subscribe(res=>
-      //   {
-          
-      //     this.Categories=res.data ;
-      //   })     
+      
       
         
   }
@@ -73,14 +75,14 @@ export class RecipeListComponent implements OnInit {
         this.RecipeService.getByCategory(c.nameEN).subscribe(res=>
           {
             console.log(res);
-            this.unfiltered=res.data
+            this.unfiltered=res.data.data
             this.Recipes.push(...this.unfiltered.filter(i=>i.isDeleted == false && i.nameEN.includes(this.recipeName)))
           })
         
       }
       
     })    
-  console.log(this.Categories)
+  
   }
   getName(val:string){
     this.recipeName=val;
@@ -94,9 +96,18 @@ export class RecipeListComponent implements OnInit {
         this.RecipeService.getRecipesByName(this.recipeName).subscribe(res=>
           {
             console.log(res);
-            this.unfiltered=res.data
+            this.unfiltered=res.data.data
             this.Recipes=this.unfiltered.filter(i=>i.isDeleted == false)
           })
+        }
+        else{
+          this.RecipeService.getRecipes(this.tableSize,this.page).subscribe(res => {
+            let responce = res.data as PagingViewModel
+            this.page = responce.pageIndex;
+            this.tableSize = responce.pageSize;
+            this.count = responce.count;
+            this.Recipes = responce.data as Recipe[];})
+
         }
   }
 

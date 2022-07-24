@@ -29,6 +29,7 @@ import { CartServices } from './Services/Cart';
 import { OrderComponent } from './Components/order/order.component';
 import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
 import { OrderServices } from 'src/app/Services/OrderServices';
+import { OrderHistoryComponent } from './Components/order-history/order-history.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { OrderServices } from 'src/app/Services/OrderServices';
     FooterComponent,
     OrderComponent,
     RecipeDetailsComponent,
+    OrderHistoryComponent,
 
   ],
   imports: [
