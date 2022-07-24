@@ -29,6 +29,11 @@ import { CartServices } from './Services/Cart';
 import { OrderComponent } from './Components/order/order.component';
 import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
 import { SignAsComponent } from './Components/Account/sign-as/sign-as.component';
+import { ResturantRecipeComponent } from './Components/restaurant/resturant-recipe/resturant-recipe.component';
+import { NgbRatingComponent } from './Components/ngb-rating/ngb-rating.component';
+import { HomeComponent } from './Components/home/home.component';
+import { OrderServices } from './Services/OrderServices';
+
 
 @NgModule({
   declarations: [
@@ -52,10 +57,13 @@ import { SignAsComponent } from './Components/Account/sign-as/sign-as.component'
     OrderComponent,
     RecipeDetailsComponent,
     SignAsComponent,
+    ResturantRecipeComponent,
+    NgbRatingComponent,
+    HomeComponent,
 
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -69,6 +77,7 @@ import { SignAsComponent } from './Components/Account/sign-as/sign-as.component'
     RecipeServices,
     RestaurantServices,
     CartServices,
+    OrderServices
   ],
   bootstrap: [AppComponent]
 })
