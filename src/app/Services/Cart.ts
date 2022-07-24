@@ -39,10 +39,11 @@ export class CartServices{
         cart.UserId = userId
         return this.http.post<ResultViewModel>("https://localhost:5001/CartAPI/Add",cart,this.getheader());
     }
-    UpdateCart(Qty:number,Recipe_ID:number,userId:string){  
+    UpdateCart(Qty:number,ID:number,recipeID:number,userId:string){  
         let cart = new addcart()
         cart.qty=Qty;
-        cart.recipe_ID = Recipe_ID;
+        cart.id = ID;
+        cart.recipe_ID=recipeID
         cart.UserId = userId
         return this.http.post<ResultViewModel>("https://localhost:5001/CartAPI/Update",cart,this.getheader());
     }

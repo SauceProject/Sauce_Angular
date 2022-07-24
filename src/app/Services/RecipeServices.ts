@@ -15,14 +15,14 @@ export class RecipeServices {
     }
     
     getRecipesByName(rName:string){
-        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/Get?nameEN="+rName)
+        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetAPI?nameEN="+rName)
     }
     
     getCategories(){
         return this.http.get<ResultViewModel>("https://localhost:5001/CategoryAPI/Get")
     }
     getByCategory(cName:string){
-        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/Get?category="+cName)
+        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetAPI?category="+cName)
     }
     getRating(){
         return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetAPI")

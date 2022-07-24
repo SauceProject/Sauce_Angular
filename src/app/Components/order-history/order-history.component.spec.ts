@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FavComponent } from './fav.component';
+import { OrderHistoryComponent } from './order-history.component';
 
-describe('FavComponent', () => {
-  let component: FavComponent;
-  let fixture: ComponentFixture<FavComponent>;
+describe('OrderHistoryComponent', () => {
+  let component: OrderHistoryComponent;
+  let fixture: ComponentFixture<OrderHistoryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FavComponent ]
+      declarations: [ OrderHistoryComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FavComponent);
+    fixture = TestBed.createComponent(OrderHistoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

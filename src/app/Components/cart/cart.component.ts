@@ -50,14 +50,15 @@ export class CartComponent implements OnInit {
     //console.log(recipeID);
     var index = this.CartItem.findIndex((i) => i.recipe_ID == recipeID);
     this.CartItem[index].qty--;
-    this.cart.UpdateCart(this.CartItem[index].qty,recipeID,this.acc.getCurrentUserId()).subscribe()
+    this.cart.UpdateCart(this.CartItem[index].qty,this.CartItem[index].id,this.CartItem[index].recipe_ID,this.acc.getCurrentUserId()).subscribe()
     this.GetRecipePrices();
   }
   plus(recipeID: number) {
     //console.log(recipeID);
     var index = this.CartItem.findIndex((i) => i.recipe_ID == recipeID);
+    console.log(this.CartItem[index])
     this.CartItem[index].qty++;
-    this.cart.UpdateCart(this.CartItem[index].qty,recipeID,this.acc.getCurrentUserId()).subscribe()
+    this.cart.UpdateCart(this.CartItem[index].qty,this.CartItem[index].id,recipeID,this.acc.getCurrentUserId()).subscribe()
     this.GetRecipePrices();
 
   }

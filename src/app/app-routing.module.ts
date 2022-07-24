@@ -11,12 +11,13 @@ import { RestaurantComponent } from './Components/restaurant/restaurant.componen
 import { RestaurantListComponent } from './Components/restaurant-list/restaurant-list.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { OurTeamComponent } from './Components/our-team/our-team.component';
-import { FavComponent } from './Components/fav/fav.component';
 import { OrderComponent } from './Components/order/order.component';
 import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
+import { OrderHistoryComponent } from './Components/order-history/order-history.component';
 import { SignAsComponent } from './Components/Account/sign-as/sign-as.component';
 import { ResturantRecipeComponent } from './Components/restaurant/resturant-recipe/resturant-recipe.component';
 import { HomeComponent } from './Components/home/home.component';
+import { FavoriteComponent } from './Components/favorite/favorite.component';
 
 const routes: Routes = [
   {path:"UserAPI/SignIn",component:LogInComponent},
@@ -30,21 +31,13 @@ const routes: Routes = [
   {path:"Restaurants",component:RestaurantListComponent},
   {path:"Cart",component:CartComponent},
   {path:"OurTeam",component:OurTeamComponent},
-  {path:"Fav",component:FavComponent},
   {path:"Order",component:OrderComponent},
+  {path:"OrderHistory",component:OrderHistoryComponent},
   {path:"recipe/details/:id",component:RecipeDetailsComponent},
   {path:"SignUpAs",component:SignAsComponent},
   {path:"Restaurants/details/:id",component:ResturantRecipeComponent},
   {path:"Home",component:HomeComponent},
-
-
-
-
-
-
-
-
-
+  {path:"Favorite",component:FavoriteComponent}
 
 
 

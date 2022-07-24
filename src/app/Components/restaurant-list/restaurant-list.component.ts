@@ -27,6 +27,7 @@ export class RestaurantListComponent implements OnInit {
       })
 
 }
+
 getName(val:string){
   this.restName=val;
 }

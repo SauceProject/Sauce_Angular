@@ -1,0 +1,26 @@
+
+
+:host {
+    width: 400px;
+   height:400px
+  }
+.card
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 2px 2px 4px #979797;
+    width: 80%;
+    height: 15vh;
+    color: #143444;
+    margin:6% auto;
+}
+.card img{
+    width: 25%;
+    height: 100%;
+}
+.card i{
+    color: #143444;
+    cursor: pointer;
+    font-size: 2rem;
+}
