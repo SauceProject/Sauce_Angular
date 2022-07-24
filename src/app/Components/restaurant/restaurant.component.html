@@ -7,11 +7,10 @@
   <h4>{{restaurant.workTime}}</h4>
   <br>
   <div>
-  <app-rating [value]="rateval"></app-rating>
+  <app-rating [value]="rateval" ></app-rating>
 </div>
 <br>
-  <div>$15.99</div>
-  <a href="#" class="btn">add to cart</a>
+  <a [routerLink]="['/Restaurants/details',restaurant.id]" class="btn">View Recipes</a>
 </div>
 
 

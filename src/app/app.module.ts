@@ -28,6 +28,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { CartServices } from './Services/Cart';
 import { OrderComponent } from './Components/order/order.component';
 import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
+import { ResturantRecipeComponent } from './Components/restaurant/resturant-recipe/resturant-recipe.component';
+import { NgbRatingComponent } from './Components/ngb-rating/ngb-rating.component';
+import { HomeComponent } from './Components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,9 @@ import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recip
     FooterComponent,
     OrderComponent,
     RecipeDetailsComponent,
+    ResturantRecipeComponent,
+    NgbRatingComponent,
+    HomeComponent,
 
   ],
   imports: [

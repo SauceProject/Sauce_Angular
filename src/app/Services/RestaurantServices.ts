@@ -14,5 +14,13 @@ export class RestaurantServices
     getRestByName(rName:string){
         return this.Http.get<ResultViewModel>("https://localhost:5001/RestaurantAPI/Get?nameEN="+rName)
     }
+    getresturantByID(id:number){
+        return this.Http.get<ResultViewModel>("https://localhost:5001/RestaurantAPI/Get?id="+id);
+
+    }
+
+    Show(resturantID:number){
+        return this.Http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetAPI?ResturantID="+resturantID)
+    }
     
 } 

@@ -14,6 +14,8 @@ import { OurTeamComponent } from './Components/our-team/our-team.component';
 import { FavComponent } from './Components/fav/fav.component';
 import { OrderComponent } from './Components/order/order.component';
 import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
+import { ResturantRecipeComponent } from './Components/restaurant/resturant-recipe/resturant-recipe.component';
+import { HomeComponent } from './Components/home/home.component';
 
 const routes: Routes = [
   {path:"UserAPI/SignIn",component:LogInComponent},
@@ -29,8 +31,12 @@ const routes: Routes = [
   {path:"OurTeam",component:OurTeamComponent},
   {path:"Fav",component:FavComponent},
   {path:"Order",component:OrderComponent},
-  
   {path:"recipe/details/:id",component:RecipeDetailsComponent},
+  {path:"Restaurants/details/:id",component:ResturantRecipeComponent},
+  {path:"Home",component:HomeComponent},
+
+
+
 
 
 
