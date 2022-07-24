@@ -30,7 +30,7 @@ export class CartServices{
         return this.http.get<ResultViewModel>("https://localhost:5001/CartAPI/Get",this.getheader());
     }
     GetRecipeById(RecipeID:number){
-        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetAPI?ID="+RecipeID,this.getheader());
+        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetDetails?ID="+RecipeID,this.getheader());
     }
     AddCart(Qty:number,Recipe_ID:number,userId:string){  
         let cart = new addcart()

@@ -31,6 +31,8 @@ import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recip
 import { ResturantRecipeComponent } from './Components/restaurant/resturant-recipe/resturant-recipe.component';
 import { NgbRatingComponent } from './Components/ngb-rating/ngb-rating.component';
 import { HomeComponent } from './Components/home/home.component';
+import { OrderServices } from './Services/OrderServices';
+
 
 @NgModule({
   declarations: [
@@ -59,7 +61,7 @@ import { HomeComponent } from './Components/home/home.component';
 
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -73,6 +75,7 @@ import { HomeComponent } from './Components/home/home.component';
     RecipeServices,
     RestaurantServices,
     CartServices,
+    OrderServices
   ],
   bootstrap: [AppComponent]
 })

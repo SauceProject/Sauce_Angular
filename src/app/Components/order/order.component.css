@@ -1,4 +1,10 @@
-
+body{
+    text-transform: capitalize;
+}
+.sub-heading, .heading{
+    color: #143444;
+    text-align: center;
+}
 .order form{
     max-width:90rem;
     border-radius: .5rem;
@@ -21,33 +27,40 @@
 
 .order form .inputBox .input span{
     display:block;
-    padding:.5rem 0;
-    font-size: 1.5rem;
-    color:var(--light-color);
+    padding:.2rem 0;
+    font-size: 1rem;
+    color:#143444;
 }
 
 .order form .inputBox .input input,
 .order form .inputBox .input textarea{
     background:#eee;
-    border-radius: .5rem;
+    border-radius: .2rem;
     padding:1rem;
     font-size: 1.6rem;
-    color:var(--background);
+    color:#143444;
     text-transform: none;
     margin-bottom: 1rem;
     width:100%;
 }
 
-.order form .inputBox .input input:focus,
-.order form .inputBox .input textarea:focus{
-    border:.1rem solid var(--gold);
+.btn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    font-size: 15px;
+    color:#fff;
+    background: #143444;
+    border-radius: 5px;
+    cursor: pointer;
+    padding:10px 25px;
+    outline: none; 
+    border:none;    
+    
 }
+.btn:hover{
+    background: #F6EE99;;
+    letter-spacing: 1px;
+    color: #143444;
 
-.order form .inputBox .input textarea{
-    height:20rem;
-    resize: none;
-}
-
-.order form .btn{
-    margin-top: 0;
 }
