@@ -22,7 +22,6 @@ import { NavbarComponent } from './Components/Nav/navbar/navbar.component';
 import { RatingComponent } from './Components/rating/rating.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { OurTeamComponent } from './Components/our-team/our-team.component';
-import { FavComponent } from './Components/fav/fav.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CartServices } from './Services/Cart';
@@ -33,6 +32,7 @@ import { ResturantRecipeComponent } from './Components/restaurant/resturant-reci
 import { NgbRatingComponent } from './Components/ngb-rating/ngb-rating.component';
 import { HomeComponent } from './Components/home/home.component';
 import { OrderServices } from './Services/OrderServices';
+import { FavoriteComponent } from './Components/favorite/favorite.component';
 
 
 @NgModule({
@@ -52,7 +52,6 @@ import { OrderServices } from './Services/OrderServices';
     RatingComponent,
     CartComponent,
     OurTeamComponent,
-    FavComponent,
     FooterComponent,
     OrderComponent,
     RecipeDetailsComponent,
@@ -60,6 +59,7 @@ import { OrderServices } from './Services/OrderServices';
     ResturantRecipeComponent,
     NgbRatingComponent,
     HomeComponent,
+    FavoriteComponent,
 
   ],
   imports: [

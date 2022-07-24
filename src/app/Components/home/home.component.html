@@ -29,116 +29,19 @@
     
     <!-- dishes section starts  -->
     
-    <section class="dishes" id="dishes">
-    
-        <h3 class="sub-heading">Recipes </h3>
-        <h1 class="heading"> popular recipes </h1>
-    
-        <div class="box-container">
-    
-            <div class="box" >
-                <a href="#" class="fas fa-heart"></a>
-                <a [routerLink]="['/recipe/details',recipe.id]"  class="fas fa-eye"></a>
-                <img src="https://localhost:5001{{recipe.imageUrl}}" alt="">
-                <h3>{{recipe.nameEN}}</h3>
-              
-                <h4>Good For  {{recipe.goodFor}} </h4>
-                <div >
-              <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
+   
+    <div style=" background:#eee; ">
+        <h3 class="sub-heading">popular Recipes </h3>
+        <main>
+            <section class="dishes" id="dishes" *ngFor="let item of Recipes 
+            | paginate : { itemsPerPage: tableSize, currentPage: page, totalItems: count}">
+            <div>
+              <app-recipe-card [recipe]="item"></app-recipe-card>
             </div>
-               <br>
-               <br> 
-                <div>{{recipe.price}} EGP</div>
-                <button  class="btn" (click)="AddTOCart(recipe.id)">add to cart</button>
-            </div>
-    
-            <div class="box" >
-                <a href="#" class="fas fa-heart"></a>
-                <a [routerLink]="['/recipe/details',recipe.id]"  class="fas fa-eye"></a>
-                <img src="https://localhost:5001{{recipe.imageUrl}}" alt="">
-                <h3>{{recipe.nameEN}}</h3>
-              
-                <h4>Good For  {{recipe.goodFor}} </h4>
-                <div >
-              <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
-            </div>
-               <br>
-               <br> 
-                <div>{{recipe.price}} EGP</div>
-                <button  class="btn" (click)="AddTOCart(recipe.id)">add to cart</button>
-            </div>
-    
-    
-            <div class="box" >
-                <a href="#" class="fas fa-heart"></a>
-                <a [routerLink]="['/recipe/details',recipe.id]"  class="fas fa-eye"></a>
-                <img src="https://localhost:5001{{recipe.imageUrl}}" alt="">
-                <h3>{{recipe.nameEN}}</h3>
-              
-                <h4>Good For  {{recipe.goodFor}} </h4>
-                <div >
-              <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
-            </div>
-               <br>
-               <br> 
-                <div>{{recipe.price}} EGP</div>
-                <button  class="btn" (click)="AddTOCart(recipe.id)">add to cart</button>
-            </div>
-        
-            <div class="box" >
-                <a href="#" class="fas fa-heart"></a>
-                <a [routerLink]="['/recipe/details',recipe.id]"  class="fas fa-eye"></a>
-                <img src="https://localhost:5001{{recipe.imageUrl}}" alt="">
-                <h3>{{recipe.nameEN}}</h3>
-              
-                <h4>Good For  {{recipe.goodFor}} </h4>
-                <div >
-              <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
-            </div>
-               <br>
-               <br> 
-                <div>{{recipe.price}} EGP</div>
-                <button  class="btn" (click)="AddTOCart(recipe.id)">add to cart</button>
-            </div>
-    
-    
-            <div class="box" >
-                <a href="#" class="fas fa-heart"></a>
-                <a [routerLink]="['/recipe/details',recipe.id]"  class="fas fa-eye"></a>
-                <img src="https://localhost:5001{{recipe.imageUrl}}" alt="">
-                <h3>{{recipe.nameEN}}</h3>
-              
-                <h4>Good For  {{recipe.goodFor}} </h4>
-                <div >
-              <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
-            </div>
-               <br>
-               <br> 
-                <div>{{recipe.price}} EGP</div>
-                <button  class="btn" (click)="AddTOCart(recipe.id)">add to cart</button>
-            </div>
-    
-    
-            <div class="box" >
-                <a href="#" class="fas fa-heart"></a>
-                <a [routerLink]="['/recipe/details',recipe.id]"  class="fas fa-eye"></a>
-                <img src="https://localhost:5001{{recipe.imageUrl}}" alt="">
-                <h3>{{recipe.nameEN}}</h3>
-              
-                <h4>Good For  {{recipe.goodFor}} </h4>
-                <div >
-              <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
-            </div>
-               <br>
-               <br> 
-                <div>{{recipe.price}} EGP</div>
-                <button  class="btn" (click)="AddTOCart(recipe.id)">add to cart</button>
-            </div>
-    
-    
-        </div>
-    
-    </section>
+          </section>
+            
+          </main>
+          </div>
     
     <!-- dishes section ends -->
     
@@ -197,13 +100,7 @@
                     <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
+                    <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
                     <h3>delicious food</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
                     <a href="#" class="btn">add to cart</a>
@@ -217,13 +114,7 @@
                     <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
+                    <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
                     <h3>delicious food</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
                     <a href="#" class="btn">add to cart</a>
@@ -237,13 +128,7 @@
                     <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
+                    <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
                     <h3>delicious food</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
                     <a href="#" class="btn">add to cart</a>
@@ -257,13 +142,7 @@
                     <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
+                    <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
                     <h3>delicious food</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
                     <a href="#" class="btn">add to cart</a>
@@ -277,13 +156,7 @@
                     <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
+                    <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
                     <h3>delicious food</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
                     <a href="#" class="btn">add to cart</a>
@@ -297,13 +170,7 @@
                     <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
+                    <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
                     <h3>delicious food</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
                     <a href="#" class="btn">add to cart</a>
@@ -317,13 +184,7 @@
                     <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
+                    <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
                     <h3>delicious food</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
                     <a href="#" class="btn">add to cart</a>
@@ -337,13 +198,7 @@
                     <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
+                    <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
                     <h3>delicious food</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
                     <a href="#" class="btn">add to cart</a>
@@ -357,13 +212,7 @@
                     <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
+                    <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
                     <h3>delicious food</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
                     <a href="#" class="btn">add to cart</a>
@@ -399,50 +248,32 @@
     
     <!-- Restaurant section starts  -->
     
-    <section class="dishes" id="dishes">
-    
+    <!-- <section class="dishes" id="dishes">
        <div class="box-container">
-        <div class="box" >
-            <a href="#" class="fas fa-heart"></a>
-            <a href="#"  class="fas fa-eye"></a>
-            <img src="../../../assets/El Dokka.jpg" alt="">
-            <h3>El Dokka</h3>
-            <h4>Good For  </h4>
-            <div  >
-          <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
+        <h3 class="sub-heading">Restaurants</h3>
+    <main>
+      <section class="dishes" id="dishes" *ngFor="let item of restaurant
+        | paginate : { itemsPerPage: tableSize, currentPage: page, totalItems: count}">
+        <div class="box-container">
+          <app-restaurant [restaurant]="item"></app-restaurant>
         </div>
-            <!-- <div> EGP</div> -->
-            <button  class="btn" (click)="AddTOCart(recipe.id)">add to cart</button>
+      </section>
+    </main>
         </div>
+    </section> -->
 
-
-        <div class="box" >
-            <a href="#" class="fas fa-heart"></a>
-            <a href="#"  class="fas fa-eye"></a>
-            <img src="../../../assets/Porto Sono.jpg" alt="">
-            <h3>Porto Sono</h3>
-            <h4>Good For  </h4>
-            <div  >
-          <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
-        </div>
-            <!-- <div> EGP</div> -->
-            <button  class="btn" (click)="AddTOCart(recipe.id)">add to cart</button>
-        </div>
-       <div class="box" >
-        <a href="#" class="fas fa-heart"></a>
-        <a href="#"  class="fas fa-eye"></a>
-        <img src="../../../assets/Porto Sono.jpg" alt="">
-        <h3>Makka Restaurant</h3>
-        <h4>Good For  </h4>
-        <div  >
-      <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
-    </div>
-        <!-- <div> EGP</div> -->
-        <button  class="btn" (click)="AddTOCart(recipe.id)">add to cart</button>
-    </div>
-
-       </div>
-    </section>
+    <div style=" background:#eee; ">
+        <h3 class="sub-heading">popular Recipes </h3>
+        <main>
+            <section class="dishes" id="dishes" *ngFor="let item of restaurant 
+            | paginate : { itemsPerPage: tableSize, currentPage: page, totalItems: count}">
+            <div>
+                <app-restaurant [restaurant]="item"></app-restaurant>
+            </div>
+          </section>
+            
+          </main>
+          </div>
     
     <!-- Restaurant section ends -->
     
