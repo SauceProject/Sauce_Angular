@@ -24,7 +24,6 @@ export class RecipeListComponent implements OnInit {
   Rating:Rating[]=[];
   Categories:Category[]=[];
   recipeName:string="";
-  test:string[]=["one","two","three"]
   constructor( private RecipeService: RecipeServices) { }
 
   ngOnInit(): void {
