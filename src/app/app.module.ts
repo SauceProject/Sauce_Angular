@@ -27,11 +27,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { CartServices } from './Services/Cart';
 import { OrderComponent } from './Components/order/order.component';
 import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
+import { OrderServices } from 'src/app/Services/OrderServices';
+import { OrderHistoryComponent } from './Components/order-history/order-history.component';
 import { SignAsComponent } from './Components/Account/sign-as/sign-as.component';
 import { ResturantRecipeComponent } from './Components/restaurant/resturant-recipe/resturant-recipe.component';
 import { NgbRatingComponent } from './Components/ngb-rating/ngb-rating.component';
 import { HomeComponent } from './Components/home/home.component';
-import { OrderServices } from './Services/OrderServices';
 import { FavoriteComponent } from './Components/favorite/favorite.component';
 
 
@@ -55,6 +56,7 @@ import { FavoriteComponent } from './Components/favorite/favorite.component';
     FooterComponent,
     OrderComponent,
     RecipeDetailsComponent,
+    OrderHistoryComponent,
     SignAsComponent,
     ResturantRecipeComponent,
     NgbRatingComponent,

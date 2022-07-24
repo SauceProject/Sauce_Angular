@@ -13,6 +13,7 @@ import { CartComponent } from './Components/cart/cart.component';
 import { OurTeamComponent } from './Components/our-team/our-team.component';
 import { OrderComponent } from './Components/order/order.component';
 import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
+import { OrderHistoryComponent } from './Components/order-history/order-history.component';
 import { SignAsComponent } from './Components/Account/sign-as/sign-as.component';
 import { ResturantRecipeComponent } from './Components/restaurant/resturant-recipe/resturant-recipe.component';
 import { HomeComponent } from './Components/home/home.component';
@@ -31,20 +32,12 @@ const routes: Routes = [
   {path:"Cart",component:CartComponent},
   {path:"OurTeam",component:OurTeamComponent},
   {path:"Order",component:OrderComponent},
+  {path:"OrderHistory",component:OrderHistoryComponent},
   {path:"recipe/details/:id",component:RecipeDetailsComponent},
   {path:"SignUpAs",component:SignAsComponent},
   {path:"Restaurants/details/:id",component:ResturantRecipeComponent},
   {path:"Home",component:HomeComponent},
   {path:"Favorite",component:FavoriteComponent}
-
-
-
-
-
-
-
-
-
 
 
 

@@ -15,7 +15,8 @@
   <!--Filter SideBar-->
   <aside>
     <div class="searchbar">
-      <input id="search" type="text" placeholder=" Search" #rr (keyup)="getName(rr.value)"> <i
+      <input id="search" type="text" placeholder=" Search" #rr (keyup)="getName(rr.value)" 
+      (keyup)="getRecipesByName()"> <i
         class="fa-solid fa-magnifying-glass" (click)="getRecipesByName()"></i>
     </div>
     <h5>Recipe Categories</h5>

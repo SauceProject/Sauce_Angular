@@ -19,8 +19,12 @@ export class OrderServices{
     }
     AddOrder(OrderDetails:Order){
         return this.http.post<ResultViewModel>("https://localhost:5001/OrderAPI/Add",OrderDetails)
-
-
+    }
+    GetAllOrders(userId:string){
+        return this.http.get<ResultViewModel>("https://localhost:5001/OrderAPI/Get?userId="+userId);
+    }
+    GetAllOrderLists(OrderID:number){
+        return this.http.get<ResultViewModel>("https://localhost:5001/OrderListAPI/GetByOrderID?OrderID="+OrderID);
     }
 
 }
