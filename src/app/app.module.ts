@@ -28,6 +28,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { CartServices } from './Services/Cart';
 import { OrderComponent } from './Components/order/order.component';
 import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
+import { SignAsComponent } from './Components/Account/sign-as/sign-as.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recip
     FooterComponent,
     OrderComponent,
     RecipeDetailsComponent,
+    SignAsComponent,
 
   ],
   imports: [
