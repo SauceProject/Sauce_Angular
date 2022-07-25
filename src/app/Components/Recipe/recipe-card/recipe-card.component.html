@@ -10,6 +10,7 @@
 </div>
    <br>
    <br> 
-    <div>{{recipe.price}} EGP</div>
-    <button  class="btn" (click)="AddTOCart(recipe.id)">add to cart</button>
+    <div *ngIf="recipe.resturantID!=null" >{{recipe.price}} EGP</div>
+    <button *ngIf="recipe.resturantID!=null"  class="btn" (click)="AddTOCart(recipe.id)">add to cart</button>
+    <button *ngIf="recipe.resturantID==null"  class="btn" [routerLink]="['/recipe/ingrediants',recipe.id]">View Ingredants</button>
 </div>

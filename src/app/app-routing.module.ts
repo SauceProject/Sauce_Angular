@@ -20,6 +20,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { FavoriteComponent } from './Components/favorite/favorite.component';
 
 const routes: Routes = [
+  {path:"",redirectTo:"Home",pathMatch:"full"},
   {path:"UserAPI/SignIn",component:LogInComponent},
   {path:"UserAPI/SignUp",component:SignUpComponent},
   {path:"LogOut",component:LogOutComponent},

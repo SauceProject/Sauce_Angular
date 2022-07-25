@@ -12,7 +12,8 @@
 
     <div class="icons">
         <i class="fas fa-bars" id="menu-bars"></i>
-        <i class="fas fa-search" id="search-icon"></i>
+        <i class="fa-solid fa-arrow-right-from-bracket" (click)="LogOut()" *ngIf="isloog"></i>
+        <i class="fa-solid fa-door-open"  *ngIf="!isloog" routerLink="/UserAPI/SignIn"></i>
         <a routerLink="/Favorite" class="fas fa-heart"></a>
         <a routerLink="/Cart" class="fas fa-shopping-cart"></a>
     </div>
