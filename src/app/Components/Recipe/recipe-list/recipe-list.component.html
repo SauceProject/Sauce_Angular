@@ -34,7 +34,7 @@
       <section class="dishes" id="dishes" *ngFor="let item of Recipes 
       | paginate : { itemsPerPage: tableSize, currentPage: page, totalItems: count}">
       <div class="box-container">
-        <app-recipe-card [recipe]="item"></app-recipe-card>
+        <app-home-made-recipe [recipe]="item"></app-home-made-recipe> 
       </div>
     </section>
       

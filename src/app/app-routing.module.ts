@@ -18,6 +18,7 @@ import { SignAsComponent } from './Components/Account/sign-as/sign-as.component'
 import { ResturantRecipeComponent } from './Components/restaurant/resturant-recipe/resturant-recipe.component';
 import { HomeComponent } from './Components/home/home.component';
 import { FavoriteComponent } from './Components/favorite/favorite.component';
+import { RecipeIngredientsComponent } from './Components/Recipe/recipe-ingredients/recipe-ingredients.component';
 
 const routes: Routes = [
   {path:"UserAPI/SignIn",component:LogInComponent},
@@ -37,7 +38,10 @@ const routes: Routes = [
   {path:"SignUpAs",component:SignAsComponent},
   {path:"Restaurants/details/:id",component:ResturantRecipeComponent},
   {path:"Home",component:HomeComponent},
-  {path:"Favorite",component:FavoriteComponent}
+  {path:"",component:HomeComponent},
+
+  {path:"Favorite",component:FavoriteComponent},
+  {path:"recipe/Ingredients/:id",component:RecipeIngredientsComponent}
 
 
 
@@ -45,6 +49,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }

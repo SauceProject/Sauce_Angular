@@ -7,10 +7,7 @@
     <h4>Good For  {{recipe.goodFor}} </h4>
     <div >
   <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
+  <button class="btn" [routerLink]="['/recipe/Ingredients',recipe.id]"> View Ingredients</button>
 </div>
-   <br>
-   <br> 
-    <div >{{recipe.price}} EGP</div>
-    <button  class="btn" (click)="AddTOCart(recipe.id)" >add to cart</button>
-    
+   
 </div>
