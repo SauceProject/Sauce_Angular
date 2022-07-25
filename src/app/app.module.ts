@@ -35,6 +35,8 @@ import { NgbRatingComponent } from './Components/ngb-rating/ngb-rating.component
 import { HomeComponent } from './Components/home/home.component';
 import { FavoriteComponent } from './Components/favorite/favorite.component';
 import { RecipeIngrediantsComponent } from './Components/Recipe/recipe-ingrediants/recipe-ingrediants.component';
+import { HomeMadeRecipeComponent } from './Components/Recipe/home-made-recipe/home-made-recipe.component';
+import { RecipeIngredientsComponent } from './Components/Recipe/recipe-ingredients/recipe-ingredients.component';
 
 
 @NgModule({
@@ -64,6 +66,8 @@ import { RecipeIngrediantsComponent } from './Components/Recipe/recipe-ingredian
     HomeComponent,
     FavoriteComponent,
     RecipeIngrediantsComponent,
+    HomeMadeRecipeComponent,
+    RecipeIngredientsComponent,
 
   ],
   imports: [

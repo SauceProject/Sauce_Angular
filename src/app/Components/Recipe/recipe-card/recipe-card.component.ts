@@ -28,6 +28,7 @@ CartItems:addcart[]=[];
     private acc :AccountServices) {   }
 
   ngOnInit(): void {
+    console.log(this.recipe)
   }
 
 }

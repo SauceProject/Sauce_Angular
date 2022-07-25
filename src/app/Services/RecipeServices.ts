@@ -27,4 +27,7 @@ export class RecipeServices {
     getRating(){
         return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetAPI")
     }
+    getIng(recipeID:number){
+        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetIngredient?recipeID="+recipeID)
+    }
 }
