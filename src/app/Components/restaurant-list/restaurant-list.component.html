@@ -10,16 +10,24 @@
     />
   </head>
   <body>
-    <div class="searchbar">
+    <!-- <div class="searchbar">
       <input
         id="search"
         type="text"
         placeholder=" Search"
         #rr
         (keyup)="getName(rr.value)"
+        (keyup)="getRestByName()"
       />
       <i class="fa-solid fa-magnifying-glass" (click)="getRestByName()"></i>
+    </div> -->
+
+    <div class="searchbar">
+      <input id="search" type="text" placeholder=" Search" #rr (keyup)="getName(rr.value)" 
+       (keyup)="getRestByName()"> <i
+        class="fa-solid fa-magnifying-glass" (click)="getRestByName()"></i>
     </div>
+
     <h3 class="sub-heading">Restaurants</h3>
     <main>
       <section class="dishes" id="dishes" *ngFor="let item of restaurant

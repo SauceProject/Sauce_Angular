@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Restaurant } from 'src/app/models/Restaurant';
+import { PagingViewModel } from 'src/app/models/ResultViewModel';
 import { RestaurantServices } from 'src/app/Services/RestaurantServices';
 
 @Component({
@@ -23,7 +24,8 @@ export class RestaurantListComponent implements OnInit {
     this.RestaurantServices.getRestaurant(this.tableSize,this.page).subscribe(res =>
       {
         console.log(res);
-        this.restaurant=res.data
+        this.restaurant=res.data;
+        this.getRestByName();
       })
 
 }
@@ -42,6 +44,15 @@ getRestByName(){
           console.log(res);
           this.restaurant=res.data
         })
+      }
+      else {
+        this.RestaurantServices.getRestaurant(this.tableSize,this.page).subscribe(res => {
+          let responce = res.data as PagingViewModel
+          this.page = responce.pageIndex;
+          this.tableSize = responce.pageSize;
+          this.count = responce.count;
+          this.restaurant= responce.data as Restaurant[];})
+
       }
      
 }

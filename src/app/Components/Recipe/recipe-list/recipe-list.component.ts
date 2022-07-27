@@ -17,7 +17,7 @@ export class RecipeListComponent implements OnInit {
   count: number = 1; //total pages
 
   //number of elements to get form database per request
-  tableSize: number = 5;
+  tableSize: number = 3;
   tableSizes: any = [1, 5, 10, 20];
   Recipes:Recipe[]=[];
   unfiltered:Recipe[]=[];
@@ -76,7 +76,7 @@ export class RecipeListComponent implements OnInit {
           {
             console.log(res);
             this.unfiltered=res.data.data
-            this.Recipes.push(...this.unfiltered.filter(i=>i.isDeleted == false && i.nameEN.includes(this.recipeName)))
+            this.Recipes.push(...this.unfiltered.filter(i=>  i.nameEN.includes(this.recipeName)))
           })
         
       }
