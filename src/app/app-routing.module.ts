@@ -19,6 +19,7 @@ import { ResturantRecipeComponent } from './Components/restaurant/resturant-reci
 import { HomeComponent } from './Components/home/home.component';
 import { RecipeIngredientsComponent } from './Components/Recipe/recipe-ingredients/recipe-ingredients.component';
 import { FavoriteComponent } from './Components/favorite/favorite.component';
+import { ProfileComponent } from './Components/Account/profile/profile.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"Home",pathMatch:"full"},
@@ -42,6 +43,8 @@ const routes: Routes = [
   {path:"",component:HomeComponent},
   {path:"favorite",component:FavoriteComponent},
   {path:"recipe/Ingredients/:id",component:RecipeIngredientsComponent},
+  {path:"profile",component:ProfileComponent},
+  
 ];
 
 @NgModule({

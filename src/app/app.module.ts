@@ -37,6 +37,7 @@ import { RecipeIngrediantsComponent } from './Components/Recipe/recipe-ingredian
 import { HomeMadeRecipeComponent } from './Components/Recipe/home-made-recipe/home-made-recipe.component';
 import { RecipeIngredientsComponent } from './Components/Recipe/recipe-ingredients/recipe-ingredients.component';
 import { FavoriteComponent } from './Components/favorite/favorite.component';
+import { ProfileComponent } from './Components/Account/profile/profile.component';
 
 
 @NgModule({
@@ -68,6 +69,7 @@ import { FavoriteComponent } from './Components/favorite/favorite.component';
     HomeMadeRecipeComponent,
     RecipeIngredientsComponent,
     FavoriteComponent,
+    ProfileComponent,
 
   ],
   imports: [
