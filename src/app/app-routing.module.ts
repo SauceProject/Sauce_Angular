@@ -41,13 +41,7 @@ const routes: Routes = [
   {path:"Home",component:HomeComponent},
   {path:"",component:HomeComponent},
   {path:"favorite",component:FavoriteComponent},
-
-
-
-  {path:"recipe/Ingredients/:id",component:RecipeIngredientsComponent}
-
-
-
+  {path:"recipe/Ingredients/:id",component:RecipeIngredientsComponent},
 ];
 
 @NgModule({
