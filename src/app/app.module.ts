@@ -33,10 +33,11 @@ import { SignAsComponent } from './Components/Account/sign-as/sign-as.component'
 import { ResturantRecipeComponent } from './Components/restaurant/resturant-recipe/resturant-recipe.component';
 import { NgbRatingComponent } from './Components/ngb-rating/ngb-rating.component';
 import { HomeComponent } from './Components/home/home.component';
-import { FavoriteComponent } from './Components/favorite/favorite.component';
 import { RecipeIngrediantsComponent } from './Components/Recipe/recipe-ingrediants/recipe-ingrediants.component';
 import { HomeMadeRecipeComponent } from './Components/Recipe/home-made-recipe/home-made-recipe.component';
 import { RecipeIngredientsComponent } from './Components/Recipe/recipe-ingredients/recipe-ingredients.component';
+import { FavoriteComponent } from './Components/favorite/favorite.component';
+import { ProfileComponent } from './Components/Account/profile/profile.component';
 
 
 @NgModule({
@@ -64,10 +65,11 @@ import { RecipeIngredientsComponent } from './Components/Recipe/recipe-ingredien
     ResturantRecipeComponent,
     NgbRatingComponent,
     HomeComponent,
-    FavoriteComponent,
     RecipeIngrediantsComponent,
     HomeMadeRecipeComponent,
     RecipeIngredientsComponent,
+    FavoriteComponent,
+    ProfileComponent,
 
   ],
   imports: [

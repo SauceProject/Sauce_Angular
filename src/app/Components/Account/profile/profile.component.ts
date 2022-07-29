@@ -1,47 +1,54 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Route, Router } from '@angular/router';
-import { LoginViewModel} from 'src/app/models/Login';
+import { Router } from '@angular/router';
+import { EditProfileViewModel } from 'src/app/models/EditProfile';
 import { SignUpViewModel } from 'src/app/models/SignUp';
 import { AccountServices } from 'src/app/Services/Account';
 
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class SignUpComponent implements OnInit {
+export class ProfileComponent implements OnInit {
+
   constructor(private builder:FormBuilder,private acc:AccountServices,private router:Router) { }
   form:FormGroup=new FormGroup([]);
-
+  profile:SignUpViewModel = new SignUpViewModel();
   ngOnInit(): void {
+    this.profileInfo()
     this.form=this.builder.group(
       {
         NameEN:['',[Validators.required]],
         NameAR:['',[Validators.required]],
         Role:['',[Validators.required]],
         Email:['',[Validators.required]],
-        Password:['',[Validators.required]],
-        ConfirmPassword:['',[Validators.required],],
-        Phone:['',[Validators.required],Validators.maxLength(11)],
+        Phone:['',[Validators.required]],
+
     });
   }
+  profileInfo(){
+    this.acc.GetUserInfo(this.acc.getCurrentUserId()).subscribe(res =>{ 
+      console.log(res)
+      this.profile=res.data[0]
 
+    })
+  }
 
   add(){
-    let SignUP =new SignUpViewModel();
-    SignUP.nameEN=this.form.value["NameEN"];
-    SignUP.nameAR=this.form.value["NameAR"];
-    SignUP.Role="User";
+    let SignUP =new EditProfileViewModel();
+    SignUP.NameEN=this.form.value["NameEN"];
+    SignUP.NameAR=this.form.value["NameAR"];
     SignUP.Email=this.form.value["Email"];
-    SignUP.Password=this.form.value["Password"];
-    SignUP.ConfirnmPassword=this.form.value["ConfirmPassword"];
     SignUP.phone=this.form.value["Phone"];
+    SignUP.Role="User";
+    SignUP.id=this.acc.getCurrentUserId();
     console.log(SignUP);
 
-    this.acc.SignUp(SignUP,'Admin').subscribe(res=>{
+    this.acc.EditProfile(SignUP,this.acc.getCurrentUserId()).subscribe(res=>{
+    //this.acc.EditProfile(SignUP,'Admin').subscribe(res=>{
       console.log(res)
-      console.log('www')
+      console.log(this.acc.getCurrentUserId())
       if(res.success){
         this.router.navigateByUrl('UserAPI/SignIn')
       }
@@ -55,7 +62,6 @@ export class SignUpComponent implements OnInit {
       console.log(err);
     })
   }
-
   onPasswordChange() {
     if (this.confirm_password.value == this.password.value) {
       this.confirm_password.setErrors(null);

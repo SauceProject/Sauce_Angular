@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { SignUpViewModel } from 'src/app/models/SignUp';
 import { AccountServices } from 'src/app/Services/Account';
 
 @Component({
@@ -8,8 +9,10 @@ import { AccountServices } from 'src/app/Services/Account';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  AccountName:string="";
+  @Input() accountname:SignUpViewModel= new SignUpViewModel();
 
-  constructor(private LogOutt: AccountServices, private http: HttpClient) { 
+  constructor(private LogOutt: AccountServices, private http: HttpClient) {
     this.LogOutt.getLooggedStatus().subscribe(
       res => this.isloog = res
     )
@@ -26,5 +29,11 @@ export class NavbarComponent implements OnInit {
     this.LogOutt.LogOut(token!).subscribe(res => { console.log(res) })
     this.LogOutt.setLooggedStatus(false);
     localStorage.removeItem("token");
+  }
+
+  getName(valu:string){
+    console.log(this.accountname.nameEN);
+console.log(this.AccountName);
+    // this.AccountName=valu;
   }
 }
