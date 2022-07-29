@@ -9,5 +9,6 @@ export class Recipe{
     isDeleted:boolean=false;
     RateValue:number=0;
     restaurantID:number=0;
+    details:string="";
 
-} 
+}

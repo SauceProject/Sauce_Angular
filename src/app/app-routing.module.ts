@@ -41,7 +41,7 @@ const routes: Routes = [
   {path:"Restaurants/details/:id",component:ResturantRecipeComponent},
   {path:"Home",component:HomeComponent},
   {path:"",component:HomeComponent},
-  {path:"Favorite",component:FavoriteComponent},
+  {path:"favorite",component:FavoriteComponent},
   {path:"recipe/Ingredients/:id",component:RecipeIngredientsComponent},
   {path:"Profile",component:ProfileComponent},
 

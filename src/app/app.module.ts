@@ -38,6 +38,8 @@ import { HomeMadeRecipeComponent } from './Components/Recipe/home-made-recipe/ho
 import { RecipeIngredientsComponent } from './Components/Recipe/recipe-ingredients/recipe-ingredients.component';
 import { FavoriteComponent } from './Components/favorite/favorite.component';
 import { ProfileComponent } from './Components/Account/profile/profile.component';
+import { RatingServices } from './Services/Rating';
+import { favServices } from './Services/Fav';
 
 
 @NgModule({
@@ -87,7 +89,9 @@ import { ProfileComponent } from './Components/Account/profile/profile.component
     RecipeServices,
     RestaurantServices,
     CartServices,
-    OrderServices
+    OrderServices,
+    RatingServices,
+    favServices
   ],
   bootstrap: [AppComponent]
 })
