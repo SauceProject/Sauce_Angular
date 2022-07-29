@@ -51,5 +51,7 @@ getCurrentUserId():string{
       }
       return false;
   }
+  GetUserInfo(ID:string ){
+    return this.http.get<ResultViewModel>(environment.apiURl+'UserAPI/GetById?ID='+ID)}
 
 }

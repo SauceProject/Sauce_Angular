@@ -14,16 +14,25 @@ export class ProfileComponent implements OnInit {
 
   constructor(private builder:FormBuilder,private acc:AccountServices,private router:Router) { }
   form:FormGroup=new FormGroup([]);
-
+  profile:SignUpViewModel = new SignUpViewModel();
   ngOnInit(): void {
+    this.profileInfo()
     this.form=this.builder.group(
       {
         NameEN:['',[Validators.required]],
         NameAR:['',[Validators.required]],
         Role:['',[Validators.required]],
-        Email:['',[Validators.required],Validators.email],
+        Email:['',[Validators.required]],
         Phone:['',[Validators.required]],
+
     });
+  }
+  profileInfo(){
+    this.acc.GetUserInfo(this.acc.getCurrentUserId()).subscribe(res =>{ 
+      console.log(res)
+      this.profile=res.data[0]
+
+    })
   }
 
   add(){

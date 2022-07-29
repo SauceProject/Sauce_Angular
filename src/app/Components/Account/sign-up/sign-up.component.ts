@@ -30,8 +30,8 @@ export class SignUpComponent implements OnInit {
 
   add(){
     let SignUP =new SignUpViewModel();
-    SignUP.NameEN=this.form.value["NameEN"];
-    SignUP.NameAR=this.form.value["NameAR"];
+    SignUP.nameEN=this.form.value["NameEN"];
+    SignUP.nameAR=this.form.value["NameAR"];
     SignUP.Role="User";
     SignUP.Email=this.form.value["Email"];
     SignUP.Password=this.form.value["Password"];

@@ -32,7 +32,7 @@ export class NavbarComponent implements OnInit {
   }
 
   getName(valu:string){
-    console.log(this.accountname.NameEN);
+    console.log(this.accountname.nameEN);
 console.log(this.AccountName);
     // this.AccountName=valu;
   }

@@ -15,7 +15,7 @@
 
     <div class="icons">
         <i class="fas fa-bars" id="menu-bars"></i>
-        <i (click)="getName(accountname.NameEN)">welcome</i>
+        <i (click)="getName(accountname.nameEN)">welcome</i>
         <i routerLink="/Profile" class="fa-solid fa-user" *ngIf="isloog"></i>
         <i class="fa-solid fa-arrow-right-from-bracket" (click)="LogOut()" *ngIf="isloog"></i>
         <i class="fa-solid fa-door-open"  *ngIf="!isloog" routerLink="/UserAPI/SignIn"></i>
