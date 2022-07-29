@@ -17,9 +17,10 @@ import { OrderHistoryComponent } from './Components/order-history/order-history.
 import { SignAsComponent } from './Components/Account/sign-as/sign-as.component';
 import { ResturantRecipeComponent } from './Components/restaurant/resturant-recipe/resturant-recipe.component';
 import { HomeComponent } from './Components/home/home.component';
-import { RecipeIngredientsComponent } from './Components/Recipe/recipe-ingredients/recipe-ingredients.component';
 import { FavoriteComponent } from './Components/favorite/favorite.component';
 import { ProfileComponent } from './Components/Account/profile/profile.component';
+import { RecipeIngredientsComponent } from './Components/Recipe/recipe-ingredients/recipe-ingredients.component';
+
 
 const routes: Routes = [
   {path:"",redirectTo:"Home",pathMatch:"full"},
