@@ -26,7 +26,10 @@ section{
 section:nth-child(even){
     background:#eee; 
 }
-
+ #Imghome{
+    background-image: url(./../../../assets/pablo-merchan-montes.jpg);
+  background-size: 1350px ;
+} 
 .sub-heading{
     text-align: center;
     color:#e2d11a;
@@ -48,8 +51,8 @@ section:nth-child(even){
     margin-bottom: 15px;
     display: inline-block;
     font-size: 20px;
-    color:#fff;
-    background: #143444;
+    color: #143444;
+    background:#F6EE99;
     border-radius: 5px;
     cursor: pointer;
     padding:5px 15px;
@@ -57,9 +60,9 @@ section:nth-child(even){
 }
 
 .btn:hover{
-    background: #F6EE99;;
+    background:  #143444;
     letter-spacing: 1px;
-    color: #143444;
+    color:#fff;
 }
 
 
@@ -131,8 +134,8 @@ main{
     padding:5px;
     background:#fff;
     border-radius: 10px;
-    border:.1px solid #143444;
-    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+    box-shadow: 0 2px 3.5px rgba(0,0,0,.1);
+    margin: 20px;
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -193,10 +196,6 @@ main{
     left:20px;
 }
 
-.menu .box-container .box img{
-    height:17rem;
-    margin:1rem 0;
-}
 
 .menu .box-container .box h3{
     color:#143444;
@@ -214,12 +213,16 @@ main{
     line-height: 1.5;
 }
 
-
+.menu .box-container .box img{
+    height:130px;
+    width: 150;
+    margin:1px 0;
+}
 
 .menu .box-container .box .stars i{
     font-size: 20px;
     color:yellow;
-    padding-bottom: 1rem;
+    padding-bottom: 5px;
 }
 
 .menu .box-container .box span{
@@ -316,7 +319,7 @@ section .item{
 
 .item  img{
     height: 100px;
-    width: 150px;
+    width: 170px;
 margin-left: 70px; 
 margin-top: 20px;   
 }

@@ -49,11 +49,12 @@
     padding:5px;
     background:#fff;
     border-radius: 10px;
-    border:.1px solid #143444;
-    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+    /* border:.1px solid #143444; */
+    box-shadow: 5px 10px 13px rgba(0,0,0,.1);
     position: relative;
     overflow: hidden;
     text-align: center;
+    margin: 20px;
     
 }
 
@@ -99,13 +100,17 @@
 }
 
  .box img{
-    height:10rem;
-    margin:1rem 0;
+    height:130px;
+    width: 150;
+    margin:1px 0;
 }
 
  .box h3{
     color:#143444;
     font-size: 25px;
+}
+#price{
+    margin:0 ;
 }
 .box h4{
     color: gray;

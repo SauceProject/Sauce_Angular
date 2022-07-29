@@ -94,6 +94,9 @@ aside .fa-magnifying-glass{
 aside #search{
     height: 1.6rem;
 }
+hr{
+    color: black;
+}
 @media (max-width:991px){
 
     html{

@@ -24,6 +24,13 @@ export class RecipeServices {
     getByCategory(cName:string){
         return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetAPI?category="+cName)
     }
+    getIngredient(){
+        return this.http.get<ResultViewModel>("https://localhost:5001/IngredientAPI/Get")
+    }
+    getByIngredient(IngerdientId:number){
+        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetByIngerdientAPI?IngerdientId="+IngerdientId)
+    }
+    
     getRating(){
         return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetAPI")
     }

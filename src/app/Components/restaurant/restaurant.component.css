@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
 
 *{
+   
     margin:0; 
     padding:0;
     box-sizing: border-box;
@@ -23,25 +24,40 @@
     cursor: pointer;
     padding:10px 25px;
 }
-
 .btn:hover{
     background: #F6EE99;;
     letter-spacing: 1px;
     color: #143444;
 }
+.btnDis{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    font-size: 15px;
+    color:#fff;
+    background: green;
+    border-radius: 5px;
+    cursor: pointer;
+    padding:10px 25px;
+}
+
+
+
 
 
 .box{
     padding:5px;
     background:#fff;
     border-radius: 10px;
-    border:.1px solid #143444;
-    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+       border:.1px solid #1638497a;
+    box-shadow: 5px 10px 13px rgba(0,0,0,.1);
     position: relative;
     overflow: hidden;
     text-align: center;
+    margin: 20px;
     
 }
+
 
  .box .fa-heart,
  .box .fa-eye{
@@ -84,13 +100,17 @@
 }
 
  .box img{
-    height:17rem;
-    margin:1rem 0;
+    height:130px;
+    width: 150;
+    margin:1px 0;
 }
 
  .box h3{
     color:#143444;
     font-size: 25px;
+}
+#price{
+    margin:0 ;
 }
 .box h4{
     color: gray;

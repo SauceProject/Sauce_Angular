@@ -1,4 +1,6 @@
 <div class="box" >
+  <a href="#" class="fas fa-heart"></a>
+  <a [routerLink]="['/recipe/details',recipe.id]"  class="fas fa-eye"></a>
     <img src="https://localhost:5001{{recipe.imageUrl}}" alt="">
     <h3>{{recipe.nameEN}}</h3>
   
@@ -8,7 +10,7 @@
 </div>
    <br>
    <br> 
-    <div >{{recipe.price}} EGP</div>
+    <div id="price" >{{recipe.price}} EGP</div>
     <button  class="btn" (click)="AddTOCart(recipe.id)" >add to cart</button>
     
 </div>

@@ -38,11 +38,11 @@ export class IngerdientListComponent implements OnInit {
 
   }
   fetchData() {
-    this.ingerdientservices.getIngerdient(this.tableSize,this.page).subscribe(res => {
+    this.ingerdientservices.getIngerdient(100,1).subscribe(res => {
       console.log(res.data);
-      this.page = res.data.pageIndex;
-      this.tableSize = res.data.pageSize;
-      this.count = res.data.count;
+      // this.page = res.data.pageIndex;
+      // this.tableSize = res.data.pageSize;
+      // this.count = res.data.count;
       this.Ingredients = res.data.data
     })
   }
@@ -51,10 +51,13 @@ export class IngerdientListComponent implements OnInit {
     this.page = event;
     this.fetchData()
   }
+
+  getByIngredient(cName:string){
+    this.Ingredients.filter(i=>{
+      if(i.nameEN==cName)
+      {
+        i.isChecked=!i.isChecked
+      }
+    })
 }
-
-
-
-
-
-
+}

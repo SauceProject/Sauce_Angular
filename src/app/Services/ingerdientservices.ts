@@ -20,6 +20,12 @@ export class ingerdientServices{
         return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/Get?nameEN="+rName)
     }
    
+    getIngredient(){
+        return this.http.get<ResultViewModel>("https://localhost:5001/IngredientAPI/Get")
+    }
+    getByIngredient(cName:string){
+        return this.http.get<ResultViewModel>("https://localhost:5001/IngredientAPI/Get?Ingredient="+cName)
+    }
     
 }
 

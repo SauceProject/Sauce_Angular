@@ -1,11 +1,15 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { isEmpty } from 'rxjs';
+import { ingerdientviewmodel } from 'src/app/models/IngerdientViewModel';
 import { Rating } from 'src/app/models/Rating';
 import { Recipe } from 'src/app/models/Recipe';
 import { PagingViewModel } from 'src/app/models/ResultViewModel';
+import { ingerdientServices } from 'src/app/Services/ingerdientservices';
 import { RecipeServices } from 'src/app/Services/RecipeServices';
 import { RatingComponent } from '../../rating/rating.component';
 import { Category } from './../../../models/Category';
+
+
 
 @Component({
   selector: 'app-recipe-list',
@@ -17,14 +21,16 @@ export class RecipeListComponent implements OnInit {
   count: number = 1; //total pages
 
   //number of elements to get form database per request
-  tableSize: number = 3;
+  tableSize: number = 10;
   tableSizes: any = [1, 5, 10, 20];
   Recipes:Recipe[]=[];
   unfiltered:Recipe[]=[];
   Rating:Rating[]=[];
   Categories:Category[]=[];
+  Ingredients: ingerdientviewmodel[]=[];
   recipeName:string="";
-  constructor( private RecipeService: RecipeServices) { }
+  constructor( private RecipeService: RecipeServices, private ingerdientServices : ingerdientServices) { }
+
 
   ngOnInit(): void {
     this.fetchData()
@@ -46,7 +52,13 @@ export class RecipeListComponent implements OnInit {
         {
           //console.log(res.data)
           this.Categories=res.data ;
-        })    
+        })   
+        this.RecipeService.getIngredient().subscribe(res=>
+          {
+            console.log(res.data)
+            // this.Categories=res.data ;
+            this.Ingredients=res.data.data;
+          }) 
     })
   }  
  onTableDataChange(event: any) {
@@ -81,7 +93,8 @@ export class RecipeListComponent implements OnInit {
         
       }
       
-    })    
+    })  
+    
   
   }
   getName(val:string){
@@ -111,6 +124,28 @@ export class RecipeListComponent implements OnInit {
         }
   }
 
- 
+  getByIngredient(IngerdientId:number){
+    this.Ingredients.filter(i=>{
+      if(i.id==IngerdientId)
+      {
+        i.isChecked=!i.isChecked
+      }
+      this.Recipes=[];
+      this.Ingredients.forEach(c=>{
+        if(c.isChecked==true)
+        {
+          this.RecipeService.getByIngredient(c.id).subscribe(res=>
+            {
+              console.log(res);
+              this.unfiltered=res.data
+              this.Recipes.push(...this.unfiltered.filter(i=>  i.nameEN.includes(this.recipeName)))
+            })
+          
+        }
+        
+      })  
+  
+    })
+}
 
 }
