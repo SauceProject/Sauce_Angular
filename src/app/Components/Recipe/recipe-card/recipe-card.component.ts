@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AccountServices } from 'src/app/Services/Account';
 import { addcart, CartServices } from 'src/app/Services/Cart';
-import { RatingServices } from 'src/app/Services/Rating';
 import { RecipeServices } from 'src/app/Services/RecipeServices';
 import { Recipe } from './../../../models/Recipe';
 
