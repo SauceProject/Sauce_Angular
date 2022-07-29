@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 import { environment } from "src/environments/environment";
+import { EditProfileViewModel } from "../models/EditProfile";
 import { LoginViewModel} from "../models/Login";
 import { ResultViewModel } from "../models/ResultViewModel";
 import { SignUpViewModel } from "../models/SignUp";
@@ -32,6 +33,12 @@ getCurrentUserId():string{
 
       return this.http.post<ResultViewModel>(environment.apiURl+'UserAPI/SignUp',log);
     }
+
+    EditProfile(log:EditProfileViewModel,userid:string){
+      let Editprofile=new EditProfileViewModel()
+      return this.http.post<ResultViewModel>(environment.apiURl+'UserAPI/Edit',log);
+    }
+
 
     LogOut(token:string){
       return this.http.post<ResultViewModel>(environment.apiURl,{token:token});

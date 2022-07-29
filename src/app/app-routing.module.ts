@@ -41,10 +41,10 @@ const routes: Routes = [
   {path:"Restaurants/details/:id",component:ResturantRecipeComponent},
   {path:"Home",component:HomeComponent},
   {path:"",component:HomeComponent},
-  {path:"favorite",component:FavoriteComponent},
+  {path:"Favorite",component:FavoriteComponent},
   {path:"recipe/Ingredients/:id",component:RecipeIngredientsComponent},
-  {path:"profile",component:ProfileComponent},
-  
+  {path:"Profile",component:ProfileComponent},
+
 ];
 
 @NgModule({
