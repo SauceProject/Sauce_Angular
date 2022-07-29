@@ -39,6 +39,7 @@ import { RecipeIngredientsComponent } from './Components/Recipe/recipe-ingredien
 import { FavoriteComponent } from './Components/favorite/favorite.component';
 import { ProfileComponent } from './Components/Account/profile/profile.component';
 import { RatingServices } from './Services/Rating';
+import { favServices } from './Services/Fav';
 
 
 @NgModule({
@@ -89,7 +90,8 @@ import { RatingServices } from './Services/Rating';
     RestaurantServices,
     CartServices,
     OrderServices,
-    RatingServices
+    RatingServices,
+    favServices
   ],
   bootstrap: [AppComponent]
 })
