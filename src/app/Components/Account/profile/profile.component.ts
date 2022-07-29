@@ -22,9 +22,7 @@ export class ProfileComponent implements OnInit {
         NameAR:['',[Validators.required]],
         Role:['',[Validators.required]],
         Email:['',[Validators.required],Validators.email],
-        Password:['',[Validators.required]],
-        ConfirmPassword:['',[Validators.required],],
-        Phone:['',[Validators.required],Validators.maxLength(11)],
+        Phone:['',[Validators.required]],
     });
   }
 
@@ -32,9 +30,9 @@ export class ProfileComponent implements OnInit {
     let SignUP =new EditProfileViewModel();
     SignUP.NameEN=this.form.value["NameEN"];
     SignUP.NameAR=this.form.value["NameAR"];
-    SignUP.Role="User";
     SignUP.Email=this.form.value["Email"];
     SignUP.phone=this.form.value["Phone"];
+    SignUP.Role="User";
     SignUP.id=this.acc.getCurrentUserId();
     console.log(SignUP);
 
