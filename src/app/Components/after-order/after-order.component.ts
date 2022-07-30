@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ResultViewModel } from './../../models/ResultViewModel';
+import { environment } from './../../../environments/environment';
+import { AccountServices } from './../../Services/Account';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-after-order',
@@ -7,9 +12,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AfterOrderComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private http:HttpClient,private acc:AccountServices) { }
+  orderID:number=0;
   ngOnInit(): void {
+    //Loading.next(true);
+    this.getLastOrder();
+  }
+  getLastOrder(){
+    this.http.get<ResultViewModel>(environment.apiURl+"OrderAPI/GetLastOrder?userId="+this.acc.getCurrentUserId())
+    .subscribe(res=>{
+      this.orderID=res.data;
+      //Loading.next(false);
+    })
   }
 
 }

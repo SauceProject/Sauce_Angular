@@ -11,6 +11,10 @@
     text-transform: capitalize;
     transition: all .2s linear;
 }
+.fa-heart,.fa-eye
+{
+    text-decoration: none;
+}
 
 
 .btn{
