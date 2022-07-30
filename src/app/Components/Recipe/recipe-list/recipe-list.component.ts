@@ -37,7 +37,7 @@ export class RecipeListComponent implements OnInit {
   }
 
   fetchData() {
-    console.log(this.tableSize,this.page)
+    //console.log(this.tableSize,this.page)
     this.RecipeService.getRecipes(this.tableSize,this.page).subscribe(res => {
       let responce = res.data as PagingViewModel
       this.page = responce.pageIndex;
@@ -45,19 +45,22 @@ export class RecipeListComponent implements OnInit {
       this.count = responce.count;
       this.unfiltered = responce.data as Recipe[];
       this.Recipes=this.unfiltered.filter(i=> i.restaurantID==null) as Recipe[]
-      //console.log(res);
-      console.log(this.Recipes);
       this.getRecipesByName();
       this.RecipeService.getCategories().subscribe(res=>
         {
-          //console.log(res.data)
           this.Categories=res.data ;
+          var c = new Category();
+          c.nameEN="All";
+          this.Categories.push(c);
         })   
         this.RecipeService.getIngredient().subscribe(res=>
           {
-            console.log(res.data)
+            //console.log(res.data)
             // this.Categories=res.data ;
             this.Ingredients=res.data.data;
+            var ing = new ingerdientviewmodel();
+            ing.nameEN="All";
+            this.Ingredients.push(ing);
           }) 
     })
   }  
@@ -71,45 +74,20 @@ export class RecipeListComponent implements OnInit {
         
   }
  
-
-
-  getByCategory(cName:string){
-    this.Categories.filter(i=>{
-      if(i.nameEN==cName)
-      {
-        i.isChecked=!i.isChecked
-      }
-    })
-    this.Recipes=[];
-    this.Categories.forEach(c=>{
-      if(c.isChecked==true)
-      {
-        this.RecipeService.getByCategory(c.nameEN).subscribe(res=>
-          {
-            console.log(res);
-            this.unfiltered=res.data.data
-            this.Recipes.push(...this.unfiltered.filter(i=>  i.nameEN.includes(this.recipeName)))
-          })
-        
-      }
-      
-    })  
-    
-  
-  }
+ 
   getName(val:string){
     this.recipeName=val;
   }
   
-  
   getRecipesByName(){
-    console.log(this.recipeName)
+    //console.log(this.recipeName)
     if(this.recipeName!=="")
         {
         this.RecipeService.getRecipesByName(this.recipeName).subscribe(res=>
           {
-            console.log(res);
+            //console.log(res);
             this.unfiltered=res.data.data
+            
             this.Recipes=this.unfiltered.filter(i=>i.isDeleted == false)
           })
         }
@@ -123,29 +101,74 @@ export class RecipeListComponent implements OnInit {
 
         }
   }
-
+  getByCategory(cName:string){
+    this.Categories.filter(i=>{
+      if(i.nameEN==cName)
+      {
+        i.isChecked=!i.isChecked
+      }
+    })
+    this.Recipes=[];
+    this.Categories.forEach(c=>{
+      if(c.isChecked==true )
+      {
+        if(c.nameEN=="All"){
+          this.RecipeService.getRecipes(this.tableSize,this.page).subscribe(res => {
+            let responce = res.data as PagingViewModel
+            this.page = responce.pageIndex;
+            this.tableSize = responce.pageSize;
+            this.count = responce.count;
+            this.Recipes = responce.data as Recipe[];
+            this.Recipes= this.Recipes.filter(i=>  i.nameEN.includes(this.recipeName))
+          })
+        }
+        else {
+        this.RecipeService.getByCategory(c.nameEN).subscribe(res=>
+          {
+            //console.log(res);
+            this.unfiltered=res.data.data
+            this.Recipes.push(...this.unfiltered.filter(i=>  i.nameEN.includes(this.recipeName)))
+          })
+        }
+        
+      }     
+    })  
+    
+  
+  }
   getByIngredient(IngerdientId:number){
+ 
     this.Ingredients.filter(i=>{
       if(i.id==IngerdientId)
       {
         i.isChecked=!i.isChecked
       }
-      this.Recipes=[];
-      this.Ingredients.forEach(c=>{
-        if(c.isChecked==true)
-        {
-          this.RecipeService.getByIngredient(c.id).subscribe(res=>
-            {
-              console.log(res);
-              this.unfiltered=res.data
-              this.Recipes.push(...this.unfiltered.filter(i=>  i.nameEN.includes(this.recipeName)))
-            })
-          
+    })
+    this.Recipes=[];
+    this.Ingredients.forEach(ing=>{
+      if(ing.isChecked==true )
+      {
+        if(ing.nameEN=="All"){
+          this.RecipeService.getRecipes(this.tableSize,this.page).subscribe(res => {
+            let responce = res.data as PagingViewModel
+            this.page = responce.pageIndex;
+            this.tableSize = responce.pageSize;
+            this.count = responce.count;
+            this.Recipes = responce.data as Recipe[];})
+        }
+        else {
+        this.RecipeService.getByIngredient(ing.id).subscribe(res=>
+          {
+            this.unfiltered=res.data
+            this.Recipes.push(...this.unfiltered.filter(i=>  i.nameEN.includes(this.recipeName)))
+            this.Recipes= this.Recipes.filter(
+              (recipe, i, arr) => arr.findIndex(t => t.id === recipe.id) === i
+            );
+          })
         }
         
-      })  
-  
-    })
+      }     
+    })  
 }
 
 }

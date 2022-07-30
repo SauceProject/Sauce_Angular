@@ -15,11 +15,7 @@
       (keyup)="getIngByName()"> <i
         class="fa-solid fa-magnifying-glass" (click)="getIngByName()"></i>
     </div>
-    <h5>Ingredients</h5>
-    <div class="check" *ngFor="let item of Ingredients">
-      <input type="checkbox" [value]="item.nameEN" #input (change)="getByIngredient(input.value)" />
-      <label> {{item.nameEN}}</label>
-    </div>
+  
   </aside>
   <main>
     

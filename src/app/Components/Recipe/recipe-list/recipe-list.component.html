@@ -10,7 +10,7 @@
     </div>
     <h5>Recipe Categories</h5>
     <div class="check" *ngFor="let item of Categories">
-      <input type="checkbox" [value]="item.nameEN" #input (change)="getByCategory(input.value)" />
+      <input type="checkbox" [value]="item.nameEN" #input (change)="getByCategory(input.value)"  />
       <label> {{item.nameEN}}</label>
     <hr style="width:50%;text-align:center;color: black;"> 
 
@@ -19,7 +19,7 @@
     <br>
     <h3>Recipe Ingredients</h3>
     <div class="check" *ngFor="let item of Ingredients">
-      <input type="checkbox" [value]="item.id" #input (change)="getByIngredient(item.id)" />
+      <input type="checkbox" [value]="item.id" #input (change)="getByIngredient(item.id)"  />
       <label> {{item.nameEN}}</label>
     </div>
   </aside>
