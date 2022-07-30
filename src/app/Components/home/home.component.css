@@ -51,8 +51,9 @@ section:nth-child(even){
     margin-bottom: 15px;
     display: inline-block;
     font-size: 20px;
-    color: #143444;
-    background:#F6EE99;
+    color: white ;
+    font-weight: bold;
+    background:#94833a80;
     border-radius: 5px;
     cursor: pointer;
     padding:5px 15px;

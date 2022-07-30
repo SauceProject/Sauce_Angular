@@ -19,10 +19,10 @@ CartItems:addcart[]=[];
 
   hidden:string="hidden";
  AddTOCart(recipeID:number) {
-  
     this.cart.AddCart(1,recipeID,this.acc.getCurrentUserId()).subscribe(res=>this.recipe.isInCart=res.data);
-  
 }
+
+
 
   constructor(private cart:CartServices,
     private acc :AccountServices) {   }

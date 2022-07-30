@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AccountServices } from 'src/app/Services/Account';
+import { RatingServices } from 'src/app/Services/Rating';
 
 @Component({
   selector: 'app-rating',
@@ -10,7 +12,7 @@ export class RatingComponent implements OnInit {
   @Input() value:number=0;
   @Input() recipeId:number=0;
   emptystar:number=0;
-  constructor() { }
+  constructor(private acc :AccountServices , private rate: RatingServices) { }
   ngOnInit(): void {
    // this.emptystar=5-this.value;
   }
@@ -27,6 +29,10 @@ export class RatingComponent implements OnInit {
   changerate(value:number){
     console.log(this.recipeId,value)
 ////
+  }
+
+  Addrate(value:number) {
+    this.rate.AddRate(this.value,this.recipeId,this.acc.getCurrentUserId()).subscribe(res=>console.log(res));
   }
 
 }

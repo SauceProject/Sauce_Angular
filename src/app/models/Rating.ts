@@ -4,7 +4,7 @@ export class Rating{
     Comment :string="";
     RatingValue :number = 0;
     RecipeID :number=0;
-    UserID :number=0;
+    UserID :string='';
     IsDeleted:boolean=false;
 
 

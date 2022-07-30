@@ -1,21 +1,19 @@
-
 <body>
-  <!-- <div class="searchbar">
-    <input id="search" type="text" placeholder=" Search" #rr (keyup)="getName(rr.value)" />
-    <i class="fa-solid fa-magnifying-glass" (click)="getIngByName()"></i>
-  </div> -->
-  <h3 class="sub-heading">Ingredients</h3>
-  <main>
-    
-    <section class="dishes" id="dishes" *ngFor="let item of ingredients ">
-      <div class="box-container">
-        <app-ingerdient-cards [ingerdient]="item"></app-ingerdient-cards>
-      </div>
-    </section>
-  </main>
-  <!-- <div class="d-flex justify-content-center">
-    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
-    </pagination-controls>
-  </div> -->
-</body>
-
+    <!-- <div class="searchbar">
+      <input id="search" type="text" placeholder=" Search" #rr (keyup)="getName(rr.value)" />
+      <i class="fa-solid fa-magnifying-glass" (click)="getIngByName()"></i>
+    </div> -->
+    <h3 class="sub-heading">Ingredients</h3>
+    <main>
+      
+      <section class="dishes" id="dishes" *ngFor="let item of ingredients ">
+        <div class="box-container">
+          <app-ingerdient-cards [ingerdient]="item"></app-ingerdient-cards>
+        </div>
+      </section>
+    </main>
+    <!-- <div class="d-flex justify-content-center">
+      <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+      </pagination-controls>
+    </div> -->
+  </body>
