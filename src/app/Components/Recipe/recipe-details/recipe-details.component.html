@@ -8,11 +8,9 @@
    <div class="container__text">
     <h1>{{recipee.nameEN}}</h1>
     <div class="container__text__star">
-     <span class="fa fa-star checked"></span>
-     <span class="fa fa-star checked"></span>
-     <span class="fa fa-star checked"></span>
-     <span class="fa fa-star checked"></span>
-     <span class="fa fa-star checked"></span>
+   
+ <app-rating [value]="recipee.RateValue" [recipeId]="recipee.id" class="star " ></app-rating>
+     
     </div>
     <p>{{recipee.details}}</p>
     <!-- <div class="container__text__timing">
@@ -29,7 +27,9 @@
       <p>40 min</p>
      </div>
     </div> -->
-    <button class="btn">view Ingredients <i class="fa fa-arrow-right"></i></button>
+    <!-- <button class="btn">view Ingredients <i class="fa fa-arrow-right"></i></button> -->
+    <button class="btn" [routerLink]="['/recipe/Ingredients',recipee.id]"> View Ingredients <i class="fa fa-arrow-right"></i></button>
+
    </div>
   </div>
  </body>
