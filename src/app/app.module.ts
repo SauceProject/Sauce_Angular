@@ -28,7 +28,6 @@ import { CartServices } from './Services/Cart';
 import { OrderComponent } from './Components/order/order.component';
 import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
 import { OrderServices } from 'src/app/Services/OrderServices';
-import { OrderHistoryComponent } from './Components/order-history/order-history.component';
 import { SignAsComponent } from './Components/Account/sign-as/sign-as.component';
 import { ResturantRecipeComponent } from './Components/restaurant/resturant-recipe/resturant-recipe.component';
 import { NgbRatingComponent } from './Components/ngb-rating/ngb-rating.component';
@@ -38,6 +37,7 @@ import { HomeMadeRecipeComponent } from './Components/Recipe/home-made-recipe/ho
 import { RecipeIngredientsComponent } from './Components/Recipe/recipe-ingredients/recipe-ingredients.component';
 import { FavoriteComponent } from './Components/favorite/favorite.component';
 import { ProfileComponent } from './Components/Account/profile/profile.component';
+import { AfterOrderComponent } from './Components/after-order/after-order.component';
 
 
 @NgModule({
@@ -60,7 +60,6 @@ import { ProfileComponent } from './Components/Account/profile/profile.component
     FooterComponent,
     OrderComponent,
     RecipeDetailsComponent,
-    OrderHistoryComponent,
     SignAsComponent,
     ResturantRecipeComponent,
     NgbRatingComponent,
@@ -70,6 +69,7 @@ import { ProfileComponent } from './Components/Account/profile/profile.component
     RecipeIngredientsComponent,
     FavoriteComponent,
     ProfileComponent,
+    AfterOrderComponent,
 
   ],
   imports: [

@@ -13,13 +13,13 @@ import { CartComponent } from './Components/cart/cart.component';
 import { OurTeamComponent } from './Components/our-team/our-team.component';
 import { OrderComponent } from './Components/order/order.component';
 import { RecipeDetailsComponent } from './Components/Recipe/recipe-details/recipe-details.component';
-import { OrderHistoryComponent } from './Components/order-history/order-history.component';
 import { SignAsComponent } from './Components/Account/sign-as/sign-as.component';
 import { ResturantRecipeComponent } from './Components/restaurant/resturant-recipe/resturant-recipe.component';
 import { HomeComponent } from './Components/home/home.component';
 import { RecipeIngredientsComponent } from './Components/Recipe/recipe-ingredients/recipe-ingredients.component';
 import { FavoriteComponent } from './Components/favorite/favorite.component';
 import { ProfileComponent } from './Components/Account/profile/profile.component';
+import { AfterOrderComponent } from './Components/after-order/after-order.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"Home",pathMatch:"full"},
@@ -35,7 +35,6 @@ const routes: Routes = [
   {path:"Cart",component:CartComponent},
   {path:"OurTeam",component:OurTeamComponent},
   {path:"Order",component:OrderComponent},
-  {path:"OrderHistory",component:OrderHistoryComponent},
   {path:"recipe/details/:id",component:RecipeDetailsComponent},
   {path:"SignUpAs",component:SignAsComponent},
   {path:"Restaurants/details/:id",component:ResturantRecipeComponent},
@@ -44,11 +43,12 @@ const routes: Routes = [
   {path:"Favorite",component:FavoriteComponent},
   {path:"recipe/Ingredients/:id",component:RecipeIngredientsComponent},
   {path:"Profile",component:ProfileComponent},
+  {path:"order/sent",component:AfterOrderComponent}
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

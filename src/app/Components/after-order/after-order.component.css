@@ -1,0 +1,28 @@
+h2{
+    color:green;
+    font-size: 6rem;
+}
+h3{
+    color:#143444
+}
+div{
+    text-align: center;
+    margin-bottom: 7rem;
+}
+.btn{
+    margin:20px;
+   
+    display: inline-block;
+    font-size: 15px;
+    color:#fff;
+    background: #143444;
+    border-radius: 5px;
+    cursor: pointer;
+    padding:10px 25px;
+    text-decoration: none;
+}
+.btn:hover{
+    background: #F6EE99;;
+    letter-spacing: 1px;
+    color: #143444;
+}

@@ -33,7 +33,7 @@ export class SignUpComponent implements OnInit {
     SignUP.nameEN=this.form.value["NameEN"];
     SignUP.nameAR=this.form.value["NameAR"];
     SignUP.Role="User";
-    SignUP.Email=this.form.value["Email"];
+    SignUP.email=this.form.value["Email"];
     SignUP.Password=this.form.value["Password"];
     SignUP.ConfirnmPassword=this.form.value["ConfirmPassword"];
     SignUP.phone=this.form.value["Phone"];

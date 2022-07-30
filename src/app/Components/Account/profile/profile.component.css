@@ -1,12 +1,12 @@
 
 body{
-    margin-top:20px;
-    color: #1a202c;
+    margin-top:4rem;
+    color: #143444;
     text-align: left;
-    /* background-color: #e2e8f0;    */
     background-color: #143444;
      
 }
+
 .main-body {
     padding: 15px;
 }

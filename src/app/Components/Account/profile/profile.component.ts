@@ -2,8 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EditProfileViewModel } from 'src/app/models/EditProfile';
+import { Order } from 'src/app/models/Order';
 import { SignUpViewModel } from 'src/app/models/SignUp';
 import { AccountServices } from 'src/app/Services/Account';
+import { OrderServices } from 'src/app/Services/OrderServices';
+import { HttpClient } from '@angular/common/http';
+import { ResultViewModel } from 'src/app/models/ResultViewModel';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
@@ -12,10 +17,15 @@ import { AccountServices } from 'src/app/Services/Account';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private builder:FormBuilder,private acc:AccountServices,private router:Router) { }
+  constructor(private builder:FormBuilder,private acc:AccountServices,private router:Router,
+     private order:OrderServices, private http:HttpClient) { }
   form:FormGroup=new FormGroup([]);
+  Order:Order=new Order();
   profile:SignUpViewModel = new SignUpViewModel();
+  id:string=this.acc.getCurrentUserId();
+
   ngOnInit(): void {
+
     this.profileInfo()
     this.form=this.builder.group(
       {
@@ -26,6 +36,8 @@ export class ProfileComponent implements OnInit {
         Phone:['',[Validators.required]],
 
     });
+    this.getLastOrder();
+
   }
   profileInfo(){
     this.acc.GetUserInfo(this.acc.getCurrentUserId()).subscribe(res =>{ 
@@ -34,6 +46,12 @@ export class ProfileComponent implements OnInit {
 
     })
   }
+ getLastOrder(){
+  this.order.GetAllOrders(this.id).subscribe(res=>{
+    console.log(res.data)
+    this.Order=res.data.data[0];
+  },err=>console.log(err) )
+ }
 
   add(){
     let SignUP =new EditProfileViewModel();
