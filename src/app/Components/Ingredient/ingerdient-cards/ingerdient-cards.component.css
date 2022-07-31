@@ -29,7 +29,13 @@
    
    
 }
+.ingho{
+    width:150px;
+}
+.ingho:hover{
+    box-shadow: 4px 4px 4px 4px#143444;;
 
+}
  .box h3{
     color:#143444;
     font-size: 25px;

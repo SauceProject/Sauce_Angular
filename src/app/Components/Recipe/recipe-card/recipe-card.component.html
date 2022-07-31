@@ -4,13 +4,14 @@
     <img src="https://localhost:5001{{recipe.imageUrl}}" alt="">
     <h3>{{recipe.nameEN}}</h3>
   
-    <h4>Good For  {{recipe.goodFor}} </h4>
+    <!-- <h4>Good For  {{recipe.goodFor}} </h4> -->
     <div >
   <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
 </div>
    <br>
    <br> 
-    <div id="price" >{{recipe.price}} EGP</div>
-    <button  class="btn" (click)="AddTOCart(recipe.id)" >add to cart</button>
-    
+    <!-- <div id="price" >{{recipe.price}} EGP</div> -->
+    <!-- <button  class="btn" (click)="AddTOCart(recipe.id)" >add to cart</button> -->
+    <!-- <button class="btn" [routerLink]="['/recipe/Ingredients',recipe.id]"> View Ingredients</button> -->
+ 
 </div>
