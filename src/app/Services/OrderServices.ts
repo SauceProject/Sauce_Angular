@@ -7,7 +7,6 @@ import { ResultViewModel } from "../models/ResultViewModel";
 
 @Injectable()
 export class OrderServices{
-    Loading:Subject<boolean> = new Subject<boolean>();
 
     getheader(){
         let token = localStorage.getItem("token")

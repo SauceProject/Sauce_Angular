@@ -16,10 +16,20 @@
     align-items: center;
     font-size: 20px;
     background-color: #143444;
+    margin-top: 5%;
   }
   .row{
     display:flex ;
     margin: 15px;
+  }
+  .abt{
+    color:#143444;
+    width: 80%;  
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 5px 10px 5px rgb(185, 185, 185);
+    padding: 1rem;
+     
   }
   .our-team {
     padding: 30px 0 40px;

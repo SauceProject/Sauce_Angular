@@ -102,6 +102,8 @@ section  .home-slider .slide{
 .home .home-slider .slide .content span{
     color:#F6EE99;
     font-size: 2rem;
+    font-weight: bolder;
+
 }
 
 .home .home-slider .slide .content h3{
@@ -110,7 +112,7 @@ section  .home-slider .slide{
 }
 
 .home .home-slider .slide .content p{
-    color:#666;
+    color:#989a9b;
     font-size: 1.5rem;
     padding:.5rem 0;
     line-height: 1.5;
