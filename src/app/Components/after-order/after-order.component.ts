@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AccountServices } from 'src/app/Services/Account';
 
 @Component({
   selector: 'app-after-order',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AfterOrderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private acc:AccountServices,private router:Router) { }
 
   ngOnInit(): void {
+
   }
 
 }
