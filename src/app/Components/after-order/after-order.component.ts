@@ -14,6 +14,7 @@ export class AfterOrderComponent implements OnInit {
 
   constructor(private http:HttpClient,private acc:AccountServices) { }
   orderID:number=0;
+  
   ngOnInit(): void {
     //Loading.next(true);
     this.getLastOrder();
