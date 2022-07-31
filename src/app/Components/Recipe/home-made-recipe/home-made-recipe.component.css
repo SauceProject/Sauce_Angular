@@ -11,6 +11,10 @@
     text-transform: capitalize;
     transition: all .2s linear;
 }
+.fa-heart,.fa-eye
+{
+    text-decoration: none;
+}
 
 
 .btn{
@@ -55,6 +59,7 @@
     overflow: hidden;
     text-align: center;
     margin: 20px;
+    width: 250px;
     
 }
 
