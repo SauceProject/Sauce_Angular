@@ -33,6 +33,7 @@
     <div style=" background:#eee; ">
         <h3 class="sub-heading">popular Recipes </h3>
         <main>
+            
             <section class="dishes" id="dishes" *ngFor="let item of Recipes 
             | paginate : { itemsPerPage: tableSize, currentPage: page, totalItems: count}">
             <div>

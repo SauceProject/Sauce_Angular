@@ -243,11 +243,11 @@ main{
 }
 
 .about .row .image{
-    flex:1 1 45rem;
+    flex:1 1 95px;
 }
 
 .about .row .image img{ 
-    width: 100%;
+    width: 350px;
 }
 
 .about .row .content{

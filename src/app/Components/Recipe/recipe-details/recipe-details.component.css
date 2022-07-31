@@ -25,7 +25,7 @@ $black-color: #351897; */
    }
     img {
      width: 300px;
-     height: 500px;
+     height: 300px;
      border-radius: 5px 0 0 5px;
     }
     .btn {
@@ -57,10 +57,10 @@ $black-color: #351897; */
        color: #351897;
      font-weight: 400;
     }
-    .container__text__star span {
+    .container__text__star  {
      font-size: 15px;
-     color: #ffa800;
      margin: -5px 0 20px;
+     margin-right: 300px;
     }
     p {
      font-size: 20px;
