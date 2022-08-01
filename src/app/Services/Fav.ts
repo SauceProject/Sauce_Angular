@@ -28,29 +28,35 @@ export class favServices{
         return this.http.get<ResultViewModel>("https://localhost:5001/FavAPI/Get",this.getheader());
     }
     GetRecipeById(RecipeID:number){
-        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetAPI?ID="+RecipeID,this.getheader());
+        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetDetails?id="+RecipeID,this.getheader());
     }
-    AddFav(Qty:number,Recipe_ID:number,userId:string){
+    AddFav(Recipe_ID:number,userId:string){
         let fav = new addfav()
-        fav.qty=Qty;
         fav.recipe_ID = Recipe_ID;
         fav.UserId = userId
         return this.http.post<ResultViewModel>("https://localhost:5001/FavAPI/Add",fav,this.getheader());
     }
 
 
-    RempveFav(FavID:number){
-        return this.http.post<ResultViewModel>("https://localhost:5001/FavAPI/Remove",{ID:FavID},this.getheader());
+    RempveFav(FavID:number,userId:string,recipe_ID:number){
+        let fav = new addfav()
+        fav.fav_ID=FavID;
+        fav.UserId=userId;
+        fav.recipe_ID= recipe_ID;
+        
+        
+        return this.http.post<ResultViewModel>("https://localhost:5001/FavAPI/Remove",fav,this.getheader());
     }
 
 }
 
 export class addfav{
-  id=0;
+  fav_ID=0;
   recipe_ID = 0;
   qty= 1;
   UserId="";
   price=0;
-  recipe_Name=""
+  recipe_Name="";
+  recipeImg=""
 
 }

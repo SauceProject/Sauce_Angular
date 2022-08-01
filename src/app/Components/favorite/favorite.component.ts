@@ -10,6 +10,7 @@ import { RecipeServices } from 'src/app/Services/RecipeServices';
 })
 export class FavoriteComponent implements OnInit {
   FavtItem: addfav[] = [];
+  userId:string=this.acc.getCurrentUserId();
 
   constructor(    private fav: favServices,
     private recipeService: RecipeServices,
@@ -17,24 +18,46 @@ export class FavoriteComponent implements OnInit {
 
   ngOnInit(): void {
     this.show();
+
   }
   show() {
     this.fav.GetFav().subscribe((res) => {
       this.FavtItem = res.data.data;
+      //console.log(res.data.data)
+      //console.log(this.FavtItem);
       this.GetRecipeNames();
+      this.GetRecipeImages();
 
     });
 }
 GetRecipeNames() {
   this.FavtItem.forEach((element) => {
+    console.log(element)
     this.fav
       .GetRecipeById(element.recipe_ID)
-      .subscribe((res) => (element.recipe_Name = res.data[0].nameEN));
+      .subscribe((res) => {
+        //console.log(res);
+        (element.recipe_Name = res.data.nameEN)
+        
+      });
   });
-  //console.log(this.CartItem);
 }
-remove(FavID: number) {
-  this.fav.RempveFav(FavID).subscribe((res) => this.show());
+GetRecipeImages() {
+  this.FavtItem.forEach((element) => {
+    console.log(element)
+    this.fav
+      .GetRecipeById(element.recipe_ID)
+      .subscribe((res) => {
+        console.log(res);
+        (element.recipeImg = res.data.imageUrl)
+        
+      });
+  });
+}
+remove(FavID: number,recipe_ID:number) {
+  this.fav.RempveFav(FavID,this.userId,recipe_ID).subscribe((res) =>{ 
+    console.log(res);
+    this.show()});
 }
 
 }
