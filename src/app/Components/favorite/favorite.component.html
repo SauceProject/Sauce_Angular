@@ -2,16 +2,20 @@
 
 
     <!--main-->
+    <h1>Favorites</h1>
      <main class="container" id="container"  >
-       <section class="heading">
-          <div> Recipe</div>
-  
-  
-       </section>
         <section *ngFor="let item of FavtItem">
   
-          <div class="item"> {{item.recipe_Name}}</div>
-  
+          <div class="box" >
+            <!-- <a [routerLink]="['/recipe/details',recipe.id]"  class="fas fa-eye"></a> -->
+              <img src="https://localhost:5001{{item.recipeImg}}" alt="">
+              <h3>{{item.recipe_Name}}</h3>
+             <br>
+             <br> 
+             <button class="btn" (click)="remove(item.fav_ID,item.recipe_ID)">Remove</button>
+             
+           
+          </div>
   
         </section>
   
