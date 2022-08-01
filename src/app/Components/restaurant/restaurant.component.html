@@ -1,11 +1,10 @@
 
 <div class="box">
-    <a href="#" class="fas fa-heart"></a>
-    <a [routerLink]="['/recipe/details',restaurant.id]"  class="fas fa-eye"></a>
+    <!-- <a href="#" class="fas fa-heart"></a>
+    <a [routerLink]="['/recipe/details',restaurant.id]"  class="fas fa-eye"></a> -->
   <img src="https://localhost:5001{{restaurant.imageUrl}}" alt="">
   <h3>{{restaurant.nameEN}}</h3>
-  <h4>{{restaurant.workTime}}</h4>
-  <br>
+  <!-- <h4>{{restaurant.workTime}}</h4> -->
   <div>
   <app-rating [value]="rateval" ></app-rating>
 </div>

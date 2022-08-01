@@ -13,7 +13,7 @@ export class RestaurantListComponent implements OnInit {
   count: number = 1; //total pages
 
   //number of elements to get form database per request
-  tableSize: number = 3;
+  tableSize: number = 10;
   tableSizes: any = [1, 5, 10, 20];
   restaurant:Restaurant[]=[];
   restName:string="";

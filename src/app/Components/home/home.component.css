@@ -101,7 +101,7 @@ section  .home-slider .slide{
 
 .home .home-slider .slide .content span{
     color:#F6EE99;
-    font-size: 2rem;
+    font-size: 40px;
     font-weight: bolder;
 
 }
@@ -112,7 +112,7 @@ section  .home-slider .slide{
 }
 
 .home .home-slider .slide .content p{
-    color:#989a9b;
+    color:#a1a3a5;
     font-size: 1.5rem;
     padding:.5rem 0;
     line-height: 1.5;
@@ -259,9 +259,11 @@ main{
 }
 
 .about .row .content p{
-    color:#666;
-    font-size: .8rem;
-    padding:.5rem 0;
+    color:white;
+    font-size: 20px;
+    padding:1px 0;
+
+margin-bottom: 70px;
     line-height: 2;
 }
 

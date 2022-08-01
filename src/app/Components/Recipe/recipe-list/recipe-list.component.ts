@@ -44,7 +44,7 @@ export class RecipeListComponent implements OnInit {
       this.tableSize = responce.pageSize;
       this.count = responce.count;
       this.unfiltered = responce.data as Recipe[];
-      this.Recipes=this.unfiltered.filter(i=> i.restaurantID==null) as Recipe[]
+      this.Recipes=this.unfiltered.filter(i=> i.resturantID==null) as Recipe[]
       this.getRecipesByName();
       this.RecipeService.getCategories().subscribe(res=>
         {

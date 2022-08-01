@@ -8,7 +8,7 @@ export class Recipe{
     isInCart:boolean=false;
     isDeleted:boolean=false;
     RateValue:number=0;
-    restaurantID:number=0;
+    resturantID:number=0;
     details:string="";
 
 }

@@ -4,7 +4,7 @@
     <img src="https://localhost:5001{{recipe.imageUrl}}" alt="">
     <h3>{{recipe.nameEN}}</h3>
   
-    <h4>Good For  {{recipe.goodFor}} </h4>
+    <!-- <h4>Good For  {{recipe.goodFor}} </h4> -->
     <div >
   <app-rating [value]="recipe.RateValue" [recipeId]="recipe.id" ></app-rating>
   <button class="btn" [routerLink]="['/recipe/Ingredients',recipe.id]"> View Ingredients</button>
