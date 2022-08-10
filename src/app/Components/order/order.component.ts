@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OrderServices } from 'src/app/Services/OrderServices';
 import { addcart } from 'src/app/Services/Cart';
 import { getLocaleExtraDayPeriods } from '@angular/common';
@@ -22,7 +22,8 @@ export class OrderComponent implements OnInit {
   constructor(
     private order: OrderServices,
     private acc: AccountServices,
-    private cart: CartServices
+    private cart: CartServices,
+    private route:Router
   ) {}
 
   ngOnInit(): void {
@@ -67,6 +68,10 @@ export class OrderComponent implements OnInit {
     console.log(this.OrderDetails.orderLists);
     this.OrderDetails.userId = this.acc.getCurrentUserId();
 
-    this.order.AddOrder(this.OrderDetails).subscribe((res) => console.log(res));
+    this.order.AddOrder(this.OrderDetails).subscribe((res) => {
+      if(res.success){
+        this.route.navigateByUrl("/order/sent")
+      }
+    });
   }
 }

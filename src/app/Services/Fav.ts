@@ -30,9 +30,8 @@ export class favServices{
     GetRecipeById(RecipeID:number){
         return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/RecipeAPI/GetAPI?ID="+RecipeID,this.getheader());
     }
-    AddFav(Qty:number,Recipe_ID:number,userId:string){
+    AddFav(Recipe_ID:number,userId:string){
         let fav = new addfav()
-        fav.qty=Qty;
         fav.recipe_ID = Recipe_ID;
         fav.UserId = userId
         return this.http.post<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/FavAPI/Add",fav,this.getheader());
@@ -46,11 +45,12 @@ export class favServices{
 }
 
 export class addfav{
-  id=0;
+  fav_ID=0;
   recipe_ID = 0;
   qty= 1;
   UserId="";
   price=0;
-  recipe_Name=""
+  recipe_Name="";
+  recipeImg=""
 
 }

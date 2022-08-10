@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   count: number = 1; //total pages
 
   //number of elements to get form database per request
-  tableSize: number = 3;
+  tableSize: number = 6;
   tableSizes: any = [1, 5, 10, 20];
   Recipes:Recipe[]=[];
   unfiltered:Recipe[]=[];
@@ -48,8 +48,8 @@ CartItems:addcart[]=[];
     this.fetchData()
     this.RestaurantServices.getRestaurant(this.tableSize,this.page).subscribe(res =>
       {
-        console.log(res);
-        this.restaurant=res.data
+        // console.log(res);
+        this.restaurant=res.data.data
       })
   }
   fetchData() {
@@ -60,7 +60,8 @@ CartItems:addcart[]=[];
       this.tableSize = responce.pageSize;
       this.count = responce.count;
       this.Recipes = responce.data as Recipe[];
-      console.log(res);
+      // this.Recipes=this.Recipes.filter(i=> i.resturantID!=null)
+      // console.log(res);
       console.log(this.Recipes);
     })
   }  
