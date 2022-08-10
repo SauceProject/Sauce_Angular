@@ -38,7 +38,7 @@ GetRecipeNames() {
       .subscribe((res) => {
         //console.log(res);
         (element.recipe_Name = res.data.nameEN)
-        
+
       });
   });
 }
@@ -50,12 +50,12 @@ GetRecipeImages() {
       .subscribe((res) => {
         console.log(res);
         (element.recipeImg = res.data.imageUrl)
-        
+
       });
   });
 }
 remove(FavID: number,recipe_ID:number) {
-  this.fav.RempveFav(FavID,this.userId,recipe_ID).subscribe((res) =>{ 
+  this.fav.RempveFav(FavID).subscribe((res) =>{
     console.log(res);
     this.show()});
 }
