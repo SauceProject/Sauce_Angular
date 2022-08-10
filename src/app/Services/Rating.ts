@@ -23,7 +23,7 @@ export class RatingServices{
       rate.RatingValue=value;
       rate.RecipeID = Recipe_ID;
       rate.UserID = userId
-      return this.http.post<ResultViewModel>("https://localhost:5001/RatingAPI/Add",rate,this.getheader());
+      return this.http.post<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/RatingAPI/Add",rate,this.getheader());
 
     }
 

@@ -21,26 +21,26 @@ export class favServices{
 
     GetAllFav( ){
 
-        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetAPI",this.getheader());
+        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/RecipeAPI/GetAPI",this.getheader());
     }
 
     GetFav(){
-        return this.http.get<ResultViewModel>("https://localhost:5001/FavAPI/Get",this.getheader());
+        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/FavAPI/Get",this.getheader());
     }
     GetRecipeById(RecipeID:number){
-        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetAPI?ID="+RecipeID,this.getheader());
+        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/RecipeAPI/GetAPI?ID="+RecipeID,this.getheader());
     }
     AddFav(Qty:number,Recipe_ID:number,userId:string){
         let fav = new addfav()
         fav.qty=Qty;
         fav.recipe_ID = Recipe_ID;
         fav.UserId = userId
-        return this.http.post<ResultViewModel>("https://localhost:5001/FavAPI/Add",fav,this.getheader());
+        return this.http.post<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/FavAPI/Add",fav,this.getheader());
     }
 
 
     RempveFav(FavID:number){
-        return this.http.post<ResultViewModel>("https://localhost:5001/FavAPI/Remove",{ID:FavID},this.getheader());
+        return this.http.post<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/FavAPI/Remove",{ID:FavID},this.getheader());
     }
 
 }

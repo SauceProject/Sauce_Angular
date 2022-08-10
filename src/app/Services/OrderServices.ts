@@ -15,20 +15,20 @@ export class OrderServices{
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
          });
-        return { headers: headers }; 
+        return { headers: headers };
     }
     constructor(private http:HttpClient){}
     GetCartByUser(userId:string){
-        return this.http.get<ResultViewModel>("https://localhost:5001/CartAPI/GetByUser?userId="+userId)
+        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/CartAPI/GetByUser?userId="+userId)
     }
     AddOrder(OrderDetails:Order){
-        return this.http.post<ResultViewModel>("https://localhost:5001/OrderAPI/Add",OrderDetails)
+        return this.http.post<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/OrderAPI/Add",OrderDetails)
     }
     GetAllOrders(userId:string){
         return this.http.get<ResultViewModel>(environment.apiURl+"OrderAPI/Get?userId="+userId);
     }
     GetAllOrderLists(OrderID:number){
-        return this.http.get<ResultViewModel>("https://localhost:5001/OrderListAPI/GetByOrderID?OrderID="+OrderID);
+        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/OrderListAPI/GetByOrderID?OrderID="+OrderID);
     }
 
 }

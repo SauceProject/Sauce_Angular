@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURl:"https://localhost:5001/"
+  apiURl:"http://ahmedrafie-001-site1.ftempurl.com/"
 };
 /*
  * For easier debugging in development mode, you can import the following file

@@ -13,19 +13,19 @@ import { ResultViewModel } from "../models/ResultViewModel";
 export class ingerdientServices{
     constructor (private http:HttpClient){}
     getIngerdient(pageSize :number,pageIndex:number ){
-        
-        return this.http.get<ResultViewModel>(`https://localhost:5001/IngredientAPI/Get?pageSize=${pageSize}&pageIndex=${pageIndex}`);
+
+        return this.http.get<ResultViewModel>(`http://ahmedrafie-001-site1.ftempurl.com/IngredientAPI/Get?pageSize=${pageSize}&pageIndex=${pageIndex}`);
     }
     getIngByName(rName:string){
-        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/Get?nameEN="+rName)
+        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/RecipeAPI/Get?nameEN="+rName)
     }
-   
+
     getIngredient(){
-        return this.http.get<ResultViewModel>("https://localhost:5001/IngredientAPI/Get")
+        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/IngredientAPI/Get")
     }
     getByIngredient(cName:string){
-        return this.http.get<ResultViewModel>("https://localhost:5001/IngredientAPI/Get?Ingredient="+cName)
+        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/IngredientAPI/Get?Ingredient="+cName)
     }
-    
+
 }
 
