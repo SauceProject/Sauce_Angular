@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 import { ingerdientviewmodel } from "../models/IngerdientViewModel";
 import { ResultViewModel } from "../models/ResultViewModel";
 
@@ -23,21 +24,21 @@ export class CartServices{
 
     GetAllCart( ){
 
-        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/RecipeAPI/GetAPI",this.getheader());
+        return this.http.get<ResultViewModel>(environment.apiURl+'RecipeAPI/GetAPI',this.getheader());
     }
 
     GetCart(){
-        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/CartAPI/Get",this.getheader());
+        return this.http.get<ResultViewModel>(environment.apiURl+'CartAPI/Get',this.getheader());
     }
     GetRecipeById(RecipeID:number){
-        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/RecipeAPI/GetDetails?ID="+RecipeID,this.getheader());
+        return this.http.get<ResultViewModel>(environment.apiURl+'RecipeAPI/GetDetails?ID='+RecipeID,this.getheader());
     }
     AddCart(Qty:number,Recipe_ID:number,userId:string){
         let cart = new addcart()
         cart.qty=Qty;
         cart.recipe_ID = Recipe_ID;
         cart.UserId = userId
-        return this.http.post<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/CartAPI/Add",cart,this.getheader());
+        return this.http.post<ResultViewModel>(environment.apiURl+'CartAPI/Add',cart,this.getheader());
     }
     UpdateCart(Qty:number,ID:number,recipeID:number,userId:string){
         let cart = new addcart()
@@ -45,11 +46,11 @@ export class CartServices{
         cart.id = ID;
         cart.recipe_ID=recipeID
         cart.UserId = userId
-        return this.http.post<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/CartAPI/Update",cart,this.getheader());
+        return this.http.post<ResultViewModel>(environment.apiURl+'CartAPI/Update',cart,this.getheader());
     }
 
     RempveCart(CartID:number){
-        return this.http.post<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/CartAPI/Remove",{ID:CartID},this.getheader());
+        return this.http.post<ResultViewModel>(environment.apiURl+'CartAPI/Remove',{ID:CartID},this.getheader());
     }
 
 }

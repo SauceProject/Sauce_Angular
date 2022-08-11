@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { environment } from "src/environments/environment";
 import { Rating } from "../models/Rating";
 import { ResultViewModel } from "../models/ResultViewModel";
 
@@ -23,7 +24,7 @@ export class RatingServices{
       rate.RatingValue=value;
       rate.RecipeID = Recipe_ID;
       rate.UserID = userId
-      return this.http.post<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/RatingAPI/Add",rate,this.getheader());
+      return this.http.post<ResultViewModel>(environment.apiURl+'RatingAPI/Add',rate,this.getheader());
 
     }
 

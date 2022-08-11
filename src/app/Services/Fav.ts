@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 import { ingerdientviewmodel } from "../models/IngerdientViewModel";
 import { ResultViewModel } from "../models/ResultViewModel";
 
@@ -21,25 +22,25 @@ export class favServices{
 
     GetAllFav( ){
 
-        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/RecipeAPI/GetAPI",this.getheader());
+        return this.http.get<ResultViewModel>(environment.apiURl+'RecipeAPI/GetAPI',this.getheader());
     }
 
     GetFav(){
-        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/FavAPI/Get",this.getheader());
+        return this.http.get<ResultViewModel>(environment.apiURl+'FavAPI/Get',this.getheader());
     }
     GetRecipeById(RecipeID:number){
-        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/RecipeAPI/GetAPI?ID="+RecipeID,this.getheader());
+        return this.http.get<ResultViewModel>(environment.apiURl+'RecipeAPI/GetAPI?ID='+RecipeID,this.getheader());
     }
     AddFav(Recipe_ID:number,userId:string){
         let fav = new addfav()
         fav.recipe_ID = Recipe_ID;
         fav.UserId = userId
-        return this.http.post<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/FavAPI/Add",fav,this.getheader());
+        return this.http.post<ResultViewModel>(environment.apiURl+'FavAPI/Add',fav,this.getheader());
     }
 
 
     RempveFav(FavID:number){
-        return this.http.post<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/FavAPI/Remove",{ID:FavID},this.getheader());
+        return this.http.post<ResultViewModel>(environment.apiURl+'FavAPI/Remove',{ID:FavID},this.getheader());
     }
 
 }

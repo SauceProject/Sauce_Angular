@@ -18,16 +18,16 @@ export class OrderServices{
     }
     constructor(private http:HttpClient){}
     GetCartByUser(userId:string){
-        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/CartAPI/GetByUser?userId="+userId)
+        return this.http.get<ResultViewModel>(environment.apiURl+'CartAPI/GetByUser?userId='+userId);
     }
     AddOrder(OrderDetails:Order){
-        return this.http.post<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/OrderAPI/Add",OrderDetails)
+        return this.http.post<ResultViewModel>(environment.apiURl+'OrderAPI/Add',OrderDetails);
     }
     GetAllOrders(userId:string){
         return this.http.get<ResultViewModel>(environment.apiURl+"OrderAPI/Get?userId="+userId);
     }
     GetAllOrderLists(OrderID:number){
-        return this.http.get<ResultViewModel>("http://ahmedrafie-001-site1.ftempurl.com/OrderListAPI/GetByOrderID?OrderID="+OrderID);
+        return this.http.get<ResultViewModel>(environment.apiURl+'OrderListAPI/GetByOrderID?OrderID='+OrderID);
     }
 
 }
