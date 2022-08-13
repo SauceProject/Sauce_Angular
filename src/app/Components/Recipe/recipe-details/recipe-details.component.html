@@ -2,15 +2,15 @@
  <body>
   <div class="container">
    <img
-    src="https://localhost:5001{{recipee.imageUrl}}"
+    src="http://medorafie-001-site1.btempurl.com{{recipee.imageUrl}}"
     alt="Pancake"
    />
    <div class="container__text">
     <h1>{{recipee.nameEN}}</h1>
     <div class="container__text__star">
-   
+
  <app-rating [value]="recipee.RateValue" [recipeId]="recipee.id" class="star " ></app-rating>
-     
+
     </div>
     <p>{{recipee.details}}</p>
     <!-- <div class="container__text__timing">

@@ -24,24 +24,24 @@ getCurrentUserId():string{
   return localStorage.getItem("userId")??""
 }
     login(log:LoginViewModel){
-      return this.http.post<ResultViewModel>(environment.apiURl+'UserAPI/SignIn',log);
+      return this.http.post<ResultViewModel>("http://medorafie-001-site1.btempurl.com/UserAPI/SignIn",log);
     }
 
     SignUp(log:SignUpViewModel,Role:string){
       let signup=new SignUpViewModel()
       signup.Role=Role;
 
-      return this.http.post<ResultViewModel>(environment.apiURl+'UserAPI/SignUp',log);
+      return this.http.post<ResultViewModel>("http://medorafie-001-site1.btempurl.com/UserAPI/SignUp",log);
     }
 
     EditProfile(log:EditProfileViewModel,userid:string){
       let Editprofile=new EditProfileViewModel()
-      return this.http.post<ResultViewModel>(environment.apiURl+'UserAPI/Edit',log);
+      return this.http.post<ResultViewModel>("http://medorafie-001-site1.btempurl.com/UserAPI/Edit",log);
     }
 
 
     LogOut(token:string){
-      return this.http.post<ResultViewModel>(environment.apiURl,{token:token});
+      return this.http.post<ResultViewModel>("http://medorafie-001-site1.btempurl.com/",{token:token});
     }
 
     IsLoggedIn():boolean{
@@ -52,6 +52,6 @@ getCurrentUserId():string{
       return false;
   }
   GetUserInfo(ID:string ){
-    return this.http.get<ResultViewModel>(environment.apiURl+'UserAPI/GetById?ID='+ID)}
+    return this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/UserAPI/GetById?ID="+ID)}
 
 }

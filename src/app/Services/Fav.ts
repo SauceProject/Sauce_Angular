@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 import { ingerdientviewmodel } from "../models/IngerdientViewModel";
 import { ResultViewModel } from "../models/ResultViewModel";
 
@@ -21,31 +22,25 @@ export class favServices{
 
     GetAllFav( ){
 
-        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetAPI",this.getheader());
+        return this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/RecipeAPI/GetAPI",this.getheader());
     }
 
     GetFav(){
-        return this.http.get<ResultViewModel>("https://localhost:5001/FavAPI/Get",this.getheader());
+        return this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/FavAPI/Get",this.getheader());
     }
     GetRecipeById(RecipeID:number){
-        return this.http.get<ResultViewModel>("https://localhost:5001/RecipeAPI/GetDetails?id="+RecipeID,this.getheader());
+        return this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/RecipeAPI/GetAPI?ID="+RecipeID,this.getheader());
     }
     AddFav(Recipe_ID:number,userId:string){
         let fav = new addfav()
         fav.recipe_ID = Recipe_ID;
         fav.UserId = userId
-        return this.http.post<ResultViewModel>("https://localhost:5001/FavAPI/Add",fav,this.getheader());
+        return this.http.post<ResultViewModel>("http://medorafie-001-site1.btempurl.com/FavAPI/Add",fav,this.getheader());
     }
 
 
-    RempveFav(FavID:number,userId:string,recipe_ID:number){
-        let fav = new addfav()
-        fav.fav_ID=FavID;
-        fav.UserId=userId;
-        fav.recipe_ID= recipe_ID;
-        
-        
-        return this.http.post<ResultViewModel>("https://localhost:5001/FavAPI/Remove",fav,this.getheader());
+    RempveFav(FavID:number){
+        return this.http.post<ResultViewModel>("http://medorafie-001-site1.btempurl.com/FavAPI/Remove",{ID:FavID},this.getheader());
     }
 
 }

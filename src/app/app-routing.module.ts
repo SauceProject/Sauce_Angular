@@ -20,6 +20,7 @@ import { FavoriteComponent } from './Components/favorite/favorite.component';
 import { ProfileComponent } from './Components/Account/profile/profile.component';
 import { AfterOrderComponent } from './Components/after-order/after-order.component';
 import { RecipeIngredientsComponent } from './Components/Recipe/recipe-ingredients/recipe-ingredients.component';
+import { AuthGuard } from './Gaurds/auth.guard';
 
 
 const routes: Routes = [
@@ -35,7 +36,7 @@ const routes: Routes = [
   {path:"Restaurants",component:RestaurantListComponent},
   {path:"Cart",component:CartComponent},
   {path:"OurTeam",component:OurTeamComponent},
-  {path:"Order",component:OrderComponent},
+  {path:"Order",component:OrderComponent,canActivate:[AuthGuard]},
   {path:"recipe/details/:id",component:RecipeDetailsComponent},
   {path:"SignUpAs",component:SignAsComponent},
   {path:"Restaurants/details/:id",component:ResturantRecipeComponent},

@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  apiURl:"https://localhost:5001/"
+  production: true,
+  apiURl:"http://medorafie-001-site1.btempurl.com/"
 };
 /*
  * For easier debugging in development mode, you can import the following file
