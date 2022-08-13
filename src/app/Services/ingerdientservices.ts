@@ -15,17 +15,17 @@ export class ingerdientServices{
     constructor (private http:HttpClient){}
     getIngerdient(pageSize :number,pageIndex:number ){
 
-        return this.http.get<ResultViewModel>(environment.apiURl+`IngredientAPI/Get?pageSize=${pageSize}&pageIndex=${pageIndex}`);
+        return this.http.get<ResultViewModel>(`http://medorafie-001-site1.btempurl.com/IngredientAPI/Get?pageSize=${pageSize}&pageIndex=${pageIndex}`);
     }
     getIngByName(rName:string){
-        return this.http.get<ResultViewModel>(environment.apiURl+'RecipeAPI/Get?nameEN='+rName);
+        return this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/RecipeAPI/Get?nameEN="+rName);
     }
 
     getIngredient(){
-        return this.http.get<ResultViewModel>(environment.apiURl+'IngredientAPI/Get');
+        return this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/IngredientAPI/Get");
     }
     getByIngredient(cName:string){
-        return this.http.get<ResultViewModel>(environment.apiURl+'IngredientAPI/Get?Ingredient='+cName);
+        return this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/IngredientAPI/Get?Ingredient="+cName);
     }
 
 }

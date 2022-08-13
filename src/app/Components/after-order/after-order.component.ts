@@ -15,13 +15,13 @@ export class AfterOrderComponent implements OnInit {
 
   constructor(private http:HttpClient,private acc:AccountServices) { }
   orderID:number=0;
-  
+
   ngOnInit(): void {
     //Loading.next(true);
     this.getLastOrder();
   }
   getLastOrder(){
-    this.http.get<ResultViewModel>(environment.apiURl+"OrderAPI/GetLastOrder?userId="+this.acc.getCurrentUserId())
+    this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/OrderAPI/GetLastOrder?userId="+this.acc.getCurrentUserId())
     .subscribe(res=>{
       this.orderID=res.data;
       //Loading.next(false);

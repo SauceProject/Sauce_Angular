@@ -7,35 +7,35 @@ import { ResultViewModel } from "../models/ResultViewModel";
 export class RecipeServices {
     constructor(private http:HttpClient){}
     getRecipes(pageSize :number,pageIndex:number){
-        return this.http.get<ResultViewModel>(environment.apiURl+`RecipeAPI/GetAPI?pageSize=${pageSize}&pageIndex=${pageIndex}`);
+        return this.http.get<ResultViewModel>(`http://medorafie-001-site1.btempurl.com/RecipeAPI/GetAPI?pageSize=${pageSize}&pageIndex=${pageIndex}`);
     }
 
     getrecipeByID(id:number){
-        return this.http.get<ResultViewModel>(environment.apiURl+'RecipeAPI/GetDetails?id='+id);
+        return this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/RecipeAPI/GetDetails?id="+id);
 
     }
 
     getRecipesByName(rName:string){
-        return this.http.get<ResultViewModel>(environment.apiURl+'RecipeAPI/GetAPI?nameEN='+rName);
+        return this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/RecipeAPI/GetAPI?nameEN="+rName);
     }
 
     getCategories(){
-        return this.http.get<ResultViewModel>(environment.apiURl+'CategoryAPI/Get');
+        return this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/CategoryAPI/Get");
     }
     getByCategory(cName:string){
-        return this.http.get<ResultViewModel>(environment.apiURl+'GetAPI?category='+cName)
+        return this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/GetAPI?category="+cName)
     }
     getIngredient(){
-        return this.http.get<ResultViewModel>(environment.apiURl+'IngredientAPI/Get');
+        return this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/IngredientAPI/Get");
     }
     getByIngredient(IngerdientId:number){
-        return this.http.get<ResultViewModel>(environment.apiURl+'RecipeAPI/GetByIngerdientAPI?IngerdientId='+IngerdientId);
+        return this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/RecipeAPI/GetByIngerdientAPI?IngerdientId="+IngerdientId);
     }
 
     getRating(){
-        return this.http.get<ResultViewModel>(environment.apiURl+'RecipeAPI/GetAPI');
+        return this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/RecipeAPI/GetAPI");
     }
     getIng(recipeID:number){
-        return this.http.get<ResultViewModel>(environment.apiURl+'RecipeAPI/GetIngredient?recipeID='+recipeID);
+        return this.http.get<ResultViewModel>("http://medorafie-001-site1.btempurl.com/RecipeAPI/GetIngredient?recipeID="+recipeID);
     }
 }
